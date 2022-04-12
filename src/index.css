@@ -3,6 +3,45 @@
   font-family: Merriweather, Arial, Helvetica, sans-serif;
   text-decoration: none;
   list-style: none;
+  padding: 0.1rem;
+}
+
+ul {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-margin-start: 0;
+          margin-inline-start: 0;
+  -webkit-margin-end: 0;
+          margin-inline-end: 0;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+
+header {
+  padding: 0.8rem;
+}
+
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+}
+
+header ul a {
+  color: #000;
 }
 
 .logo {
@@ -14,11 +53,91 @@ h1 {
   color: #f44;
 }
 
-.card-pic img {
-  width: 25%;
+.card-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  gap: 0.4rem;
 }
 
-.like-btn img {
-  width: 5%;
+.card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1.4rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-pic img {
+  width: 90%;
+  border-radius: 5px;
+}
+
+.card-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card-info .card-title {
+  width: 80%;
+  font-style: italic;
+}
+
+.card-info .like-btn {
+  padding: 0;
+  height: 1.3rem;
+}
+
+.comment-btn {
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: bold;
+  border: solid 0.2rem black;
+  width: auto;
+  background-color: #fff;
+  -webkit-box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.9);
+          box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.9);
+  margin: 0;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+  user-select: none;
+  /* supported by Chrome and Opera */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+}
+
+.comment-btn:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
 }
 /*# sourceMappingURL=index.css.map */

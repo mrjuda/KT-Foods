@@ -6,6 +6,29 @@
   font-family: Merriweather, Arial, Helvetica, sans-serif;
   text-decoration: none;
   list-style: none;
+  padding: 0.1rem;
+}
+
+ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+
+header {
+  padding: 0.8rem;
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    a {
+      color: #000;
+    }
+  }
 }
 
 .logo {
@@ -17,14 +40,71 @@ h1 {
   color: #f44
 }
 
+.card-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 0.4rem;
+}
+
+.card-container {
+  display: flex;
+  margin-bottom: 1.4rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .card-pic {
   img {
-    width: 25%;
+    width: 90%;
+    border-radius: 5px;
   }
 }
 
-.like-btn {
-  img {
-    width: 5%;
+.card-meta {
+  
+}
+
+.card-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .card-title {
+    width: 80%;
+    font-style: italic;
   }
+  .like-btn {
+      padding: 0;
+      height: 1.3rem;
+      // height: auto;
+  }
+}
+
+.comment-btn {
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: bold;
+  border: solid 0.2rem black;
+  width: auto;
+  background-color: #fff;
+  box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.9);
+  margin: 0;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.comment-btn:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
 }
