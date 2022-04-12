@@ -11,6 +11,7 @@ const loadPage = async() => {
       },
     );
     if(response.ok) {
+      console.log(response);
       const section = document.querySelectorAll('#grid');
      
     }
