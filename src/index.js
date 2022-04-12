@@ -1,3 +1,1 @@
-import './index.scss';
-
-const test = 'a';
+import './index.css';
