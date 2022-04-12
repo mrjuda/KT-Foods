@@ -1,8 +1,10 @@
 // dyn.js
 
-import { newScoreSet, getScoreSet } from './socialApiModule.js';
-import { newScoreSet, getScoreSet } from './mealApiModule.js';
+import {
+  addLike, getLikes, addComment, getComments,
+} from './socialApiModule.js';
+import { getMeal } from './mealApiModule.js';
 
 export default class DynGrid {
-  
+
 }

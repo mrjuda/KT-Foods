@@ -141,8 +141,8 @@ h1 {
 }
 
 hr {
-  -webkit-box-shadow: #000;
-          box-shadow: #000;
+  color: #000;
+  background-color: #000;
 }
 
 footer {
