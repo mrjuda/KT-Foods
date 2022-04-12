@@ -1,6 +1,7 @@
-# Modulçe 2's Capstone
+# KT Meals
 ## 📑 Project description
-[UPDATE ME ASAP]
+KT Meals is a food appreciation website.
+Choose a meal of your preference, hit like, and comment.
 
 ## 🛠 Built with
 - HTML5
