@@ -1,7 +1,7 @@
 // creating a function that reloads the page
 const loadMeals = async () => {
   const response = await fetch(
-    'www.themealdb.com/api/json/v1/1/filter.php?a=indian',
+    'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood',
   );
   const result = await response.json();
   return result.meals;
