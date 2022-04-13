@@ -16,6 +16,7 @@ const getID = async (endpoint) => {
         'Content-Type': 'application/json',
       },
     });
+    console.log(response.ok());
   } catch (error) {
     return error.message;
   }
