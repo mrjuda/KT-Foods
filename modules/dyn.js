@@ -3,7 +3,7 @@
 import {
   addLike, getLikes, addComment, getComments,
 } from './socialApiModule.js';
-import { getMeal, getMeal2 } from './mealApiModule.js';
+import { getMeal, getMeal2, cardData } from './mealApiModule.js';
 
 export default class DynGrid {
   dynamicGrid = document.getElementById('dynamicGrid');
@@ -20,7 +20,7 @@ export default class DynGrid {
 
   Getmeal2 = getMeal2;
 
-  genCard = (id, imgSrc) => {
+  genCard = (id, unqId, imgSrc, projectName) => {
     // meals > [id] > idMeal
     // const cardId = 'idMeal';
     const cardContainer = document.createElement('div');
@@ -46,7 +46,7 @@ export default class DynGrid {
     const cardTitle = document.createElement('div');
     cardTitle.classList.add('card-title');
     cardTitle.innerHTML = `
-    Cumê:${id + 1}
+    ${projectName}
     `;
     const likeBtn = document.createElement('img');
     likeBtn.classList.add('like-btn');
@@ -62,12 +62,15 @@ export default class DynGrid {
     commentBtn.classList.add('comment-btn');
     commentBtn.id = `${id}`;
     commentBtn.innerHTML = `
-    Comments:${id + 1}
+    Comments:${id}
     `;
     const reserveBtn = document.createElement('div');
     reserveBtn.classList.add('reserve-btn');
+    // reserveBtn.innerHTML = `
+    // Reservations7
+    // `;
     reserveBtn.innerHTML = `
-    Reservations7
+    ${unqId}
     `;
     cardInfo.appendChild(cardTitle);
     cardInfo.appendChild(likeBtn);
@@ -84,13 +87,20 @@ export default class DynGrid {
     // <h1>Não seja um galado</h1>
     // `;
     // this.dynamicGrid.innerHTML = testGalado;
+    const uniqueId = `
+    KKpXiSYiKOUJ89ZTxbhq
+    `;
     const oldHtml = document.getElementById('cardGrid');
     oldHtml.innerHTML = '';
     this.dynamicGrid.innerHTML = '';
 
     for (let i = 0; i < 6; i += 1) {
-      const imgSrc = `../src/images/pic${i + 1}.jpg`;
-      this.genCard(i, imgSrc);
+      const cardId = i + 1;
+      const uniqueId = cardData[i].unqId;
+      // const imgSrc = `../src/images/pic${cardId}.jpg`;
+      const picSrc = cardData[i].imgSrc;
+      const projectName = cardData[i].project;
+      this.genCard(cardId, uniqueId, picSrc, projectName);
     }
   }
 }

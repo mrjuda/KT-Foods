@@ -71,20 +71,21 @@ h1 {
 }
 
 .card-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 1.4rem;
+  display: -ms-grid;
+  display: grid;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 1.4rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
   padding: 0.2rem;
 }
 
@@ -93,19 +94,30 @@ h1 {
 }
 
 .card-pic img {
-  width: 90%;
+  width: 95%;
   padding: 0.1rem;
   border-radius: 5px;
 }
 
 .card-meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 0.2rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 93%;
+  height: 24vh;
+  padding: 0.2rem;
 }
 
 .card-meta p {
+  padding: 0.4rem;
   text-align: end;
 }
 
@@ -117,9 +129,14 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
 }
 
 .card-info .card-title {
@@ -128,6 +145,7 @@ h1 {
 }
 
 .card-info .like-btn {
+  text-align: right;
   padding: 0;
   height: 1.3rem;
   cursor: pointer;
@@ -140,14 +158,19 @@ h1 {
 .comment-btn,
 .reserve-btn {
   font-size: 0.8rem;
-  text-align: center;
   font-weight: bold;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   border: solid 0.2rem black;
-  width: auto;
   background-color: #fff;
   -webkit-box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.9);
           box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.9);
-  margin: 0.6rem;
+  margin: 0.3rem;
   padding: 0.2rem 0.4rem;
   cursor: pointer;
   user-select: none;

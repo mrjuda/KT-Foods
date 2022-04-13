@@ -1,6 +1,6 @@
 const apiAddress = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
 
-const newGame = async () => {
+const newInteraction = async () => {
   const response = await fetch(apiAddress, {
     method: 'POST',
     headers: {
@@ -13,4 +13,4 @@ const newGame = async () => {
   return data;
 };
 
-newGame();
+newInteraction();
