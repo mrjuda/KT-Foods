@@ -14,7 +14,7 @@ const mealList = async (data) => {
     comBtn.innerHTML = 'Comments';
     comBtn.classList = 'commentsBtn';
     resBtn.innerHTML = 'Reservations';
-    comBtn.classList = 'reserveBtn';
+    resBtn.classList = 'reserveBtn';
 
     const listItem = document.createElement('div');
     listItem.classList = 'gridPoint';
