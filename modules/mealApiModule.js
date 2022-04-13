@@ -1,5 +1,10 @@
 // mealApiModule.js
 
-export default class GetMeal {
-  getMeal = 'getMeal';
-}
+const getMeal = () => {
+  const getM = 'getMeal';
+  return getM;
+};
+
+export {
+  getMeal as default,
+};
