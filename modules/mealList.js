@@ -13,8 +13,8 @@ const mealList = async (data) => {
 
     comBtn.innerHTML = 'Comments';
     comBtn.classList = 'commentsBtn';
-    resBtn.innerHTML = 'Resservations';
-    comBtn.classList = 'resserveBtn';
+    resBtn.innerHTML = 'Reservations';
+    comBtn.classList = 'reserveBtn';
 
     const listItem = document.createElement('div');
     listItem.classList = 'gridPoint';
@@ -25,6 +25,8 @@ const mealList = async (data) => {
 
     listItem.appendChild(image);
     listItem.appendChild(mealName);
+    listItem.appendChild(comBtn);
+    listItem.appendChild(resBtn);
     main.appendChild(listItem);
   }
 };

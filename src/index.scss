@@ -68,10 +68,12 @@ h1 {
 
 #grid {
   .gridPoint {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 0.1rem;
-    margin-left: 4rem;
+    display: flex;
+    flex-direction: column;
+    // grid-template-columns: auto auto auto;
+    gap: 1rem;
+    padding: 1rem;
+    // margin-left: 4rem;
   }
 
   .imgClass {
@@ -82,22 +84,22 @@ h1 {
   }
 }
 
-.card-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  .card-title {
-    width: 80%;
-    font-style: italic;
-  }
-  .like-btn {
-      padding: 0;
-      height: 1.3rem;
-  }
-}
+// .card-info {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   .card-title {
+//     width: 80%;
+//     font-style: italic;
+//   }
+//   .like-btn {
+//       padding: 0;
+//       height: 1.3rem;
+//   }
+// }
 
-.comment-btn,
-.reserve-btn {
+.commentsBtn,
+.reserveBtn {
   font-size: 0.8rem;
   text-align: center;
   font-weight: bold;
@@ -106,7 +108,7 @@ h1 {
   background-color: #fff;
   box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.9);
   margin: 0;
-  padding: 0.2rem 0.4rem;
+  padding: 0.2rem 0;
   cursor: pointer;
   user-select: none; /* supported by Chrome and Opera */
   -webkit-user-select: none; /* Safari */
@@ -115,8 +117,8 @@ h1 {
   -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
-.comment-btn:hover,
-.reserve-btn:hover {
+.commentsBtn:hover,
+.reserveBtn:hover {
   color: #fff;
   background-color: #000;
 }
