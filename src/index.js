@@ -1,4 +1,11 @@
+/* eslint-disable import/no-unresolved */
 import './index.scss';
+import loadMeals from '../modules/loadMeals.js';
+import mealList from '../modules/mealList.js';
+
+window.addEventListener('load', async () => {
+  mealList(await loadMeals());
+});
 
 const getID = async (endpoint) => {
   let response;

@@ -13,7 +13,7 @@ const loadPage = async() => {
     if(response.ok) {
       console.log(response);
       const section = {
-        img: '../src/images/pic1.jpg',
+        image: '../src/images/pic1.jpg',
         title: 'Food 1',
       };
 
@@ -44,8 +44,6 @@ const loadPage = async() => {
         divInfo.appendChild(likeImg);
 
       }
-      for (let i = 0; i < oneSection.length; i += 1) {
-        const oneSection = document.createElement('div');
-
-      }
-    };
+      // for (let i = 0; i < oneSection.length; i += 1) {
+      //   const oneSection = document.createElement('div');
+      // };
