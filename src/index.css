@@ -53,7 +53,8 @@ h1 {
   color: #f44;
 }
 
-.card-grid {
+.card-grid,
+.dynamic-grid {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto auto;

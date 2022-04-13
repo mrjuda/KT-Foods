@@ -42,7 +42,8 @@ h1 {
   color: #f44;
 }
 
-.card-grid {
+.card-grid,
+.dynamic-grid {
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 0.4rem;
