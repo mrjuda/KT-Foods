@@ -1,7 +1,7 @@
 const loadPage = async() => {
   try {
     const response = await fetch(
-      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Have-Samuel/scores/',
+      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/c2i7GgLdDFFaD5JEzNMX/scores/',
       {
         method: 'POST',
         body: JSON.stringify(),
@@ -44,7 +44,8 @@ const loadPage = async() => {
         divInfo.appendChild(likeImg);
 
       }
-     
-    }
-  }
-}
+      for (let i = 0; i < oneSection.length; i += 1) {
+        const oneSection = document.createElement('div');
+
+      }
+    };

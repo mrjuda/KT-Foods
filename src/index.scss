@@ -99,7 +99,8 @@ h1 {
   -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
-.comment-btn:hover {
+.comment-btn:hover,
+.reserve-btn:hover {
   color: #fff;
   background-color: #000;
 }
