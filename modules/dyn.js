@@ -46,7 +46,7 @@ export default class DynGrid {
     const cardTitle = document.createElement('div');
     cardTitle.classList.add('card-title');
     cardTitle.innerHTML = `
-    Cumê:${id+1}
+    Cumê:${id + 1}
     `;
     const likeBtn = document.createElement('img');
     likeBtn.classList.add('like-btn');
@@ -62,7 +62,7 @@ export default class DynGrid {
     commentBtn.classList.add('comment-btn');
     commentBtn.id = `${id}`;
     commentBtn.innerHTML = `
-    Comments:${id+1}
+    Comments:${id + 1}
     `;
     const reserveBtn = document.createElement('div');
     reserveBtn.classList.add('reserve-btn');
@@ -80,16 +80,16 @@ export default class DynGrid {
   }
 
   showPage = () => {
+    // const testGalado = `
+    // <h1>Não seja um galado</h1>
+    // `;
+    // this.dynamicGrid.innerHTML = testGalado;
     const oldHtml = document.getElementById('cardGrid');
     oldHtml.innerHTML = '';
-    const testGalado = `
-    <h1>Não seja um galado</h1>
-    `;
-    this.dynamicGrid.innerHTML = testGalado;
     this.dynamicGrid.innerHTML = '';
 
     for (let i = 0; i < 6; i += 1) {
-      let imgSrc = `../src/images/pic${i+1}.jpg`
+      const imgSrc = `../src/images/pic${i + 1}.jpg`;
       this.genCard(i, imgSrc);
     }
   }
