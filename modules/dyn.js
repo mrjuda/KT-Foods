@@ -6,5 +6,15 @@ import {
 import { getMeal } from './mealApiModule.js';
 
 export default class DynGrid {
+  dynamicGrid = document.getElementById('dynamicGrid');
 
+  AddLike = addLike;
+
+  GetLikes = getLikes;
+
+  AddComment = addComment;
+
+  GetComments = getComments;
+
+  GetMeal = getMeal;
 }

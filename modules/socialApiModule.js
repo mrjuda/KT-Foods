@@ -1,17 +1,25 @@
 // socialApiModule.js
 
-const addComment = async () => {
-  const response = await fetch(uniqueGame, {
-    method: 'POST',
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-    body: JSON.stringify({
-      user: newName.value,
-      score: newScore.value,
-    }),
-  });
+const addLike = () => {
+  const addL = 'addLike';
+  return addL;
+};
 
-  const data = await response.json();
-  return data;
+const getLikes = () => {
+  const getL = 'getLikes';
+  return getL;
+};
+
+const addComment = () => {
+  const addC = 'addComment';
+  return addC;
+};
+
+const getComments = () => {
+  const getC = 'getComments';
+  return getC;
+};
+
+export {
+  addLike, getLikes, addComment, getComments,
 };
