@@ -3,7 +3,7 @@
 import {
   addLike, getLikes, addComment, getComments,
 } from './socialApiModule.js';
-import { getMeal } from './mealApiModule.js';
+import { getMeal, getMeal2 } from './mealApiModule.js';
 
 export default class DynGrid {
   dynamicGrid = document.getElementById('dynamicGrid');
@@ -17,4 +17,6 @@ export default class DynGrid {
   GetComments = getComments;
 
   GetMeal = getMeal;
+
+  Getmeal2 = getMeal2;
 }
