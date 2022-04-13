@@ -26,48 +26,68 @@ export default class DynGrid {
     const cardContainer = document.createElement('div');
     cardContainer.classList.add('card-container');
     // meals > [id] > strMealThumb
-    // const cardPic = document.createElement('div');
-    // cardPic.classList.add('card-pic');
-    // cardContainer.appendChild(cardPic);
+    const cardPic = document.createElement('div');
+    cardPic.classList.add('card-pic');
+    const cardPicImg = document.createElement('img');
+    cardPicImg.src = '../src/images/pic2.jpg';
+    cardPic.appendChild(cardPicImg);
+    cardContainer.appendChild(cardPic);
     const cardMeta = document.createElement('div');
     cardMeta.classList.add('card-meta');
 
-    cardMeta.innerHTML = `
-    Testando comida 1
-    `;
-
-    // const cardInfo = document.createElement('div');
-    // cardInfo.classList.add('card-info');
-    // // meals > [id] > strMeal
-    // const cardTitle = document.createElement('div');
-    // cardTitle.classList.add('card-title');
-    // cardTitle.innerHTML = `
+    // cardMeta.innerHTML = `
     // Testando comida 1
     // `;
-    // const likeBtn = `
-    // <img class="like-btn" src="../src/icons/like.png" alt="Like button">
-    // `;
-    // const likeCounter = document.createElement('div');
-    // likeCounter.classList.add('like-counter');
-    // const commentBtn = document.createElement('div');
-    // commentBtn.classList.add('comment-btn');
-    // const reserveBtn = document.createElement('div');
-    // reserveBtn.classList.add('reserve-btn');
-    // cardInfo.appendChild(cardTitle);
-    // cardInfo.appendChild(likeBtn);
-    // cardMeta.appendChild(cardInfo);
-    // cardMeta.appendChild(likeCounter);
-    // cardMeta.appendChild(commentBtn);
-    // cardMeta.appendChild(reserveBtn);
+
+    const cardInfo = document.createElement('div');
+    cardInfo.classList.add('card-info');
+    // meals > [id] > strMeal
+    const cardTitle = document.createElement('div');
+    cardTitle.classList.add('card-title');
+    cardTitle.innerHTML = `
+    Cumê BB
+    `;
+    const likeBtn = document.createElement('img');
+    likeBtn.classList.add('like-btn');
+    likeBtn.src = '../src/icons/like.png';
+    likeBtn.alt = 'Like button';
+
+    const likeCounter = document.createElement('div');
+    likeCounter.classList.add('like-counter');
+    likeCounter.innerHTML = `
+    7 likes
+    `;
+    const commentBtn = document.createElement('div');
+    commentBtn.classList.add('comment-btn');
+    commentBtn.innerHTML = `
+    Comments7
+    `;
+    const reserveBtn = document.createElement('div');
+    reserveBtn.classList.add('reserve-btn');
+    reserveBtn.innerHTML = `
+    Reservations7
+    `;
+    cardInfo.appendChild(cardTitle);
+    cardInfo.appendChild(likeBtn);
+    cardMeta.appendChild(cardInfo);
+    cardMeta.appendChild(likeCounter);
+    cardMeta.appendChild(commentBtn);
+    cardMeta.appendChild(reserveBtn);
     cardContainer.appendChild(cardMeta);
+    this.dynamicGrid.appendChild(cardContainer);
   }
 
   showPage = () => {
+    const oldHtml = document.getElementById('cardGrid');
+    oldHtml.innerHTML = '';
     const testGalado = `
     <h1>Não seja um galado</h1>
     `;
-    console.log(testGalado);
-    const testGalado2 = this.genCard();
-    this.dynamicGrid.innerHTML = testGalado2.cardContainer;
+    this.dynamicGrid.innerHTML = testGalado;
+    this.dynamicGrid.innerHTML = '';
+
+    for (let i = 0; i < 6; i += 1) {
+      this.genCard();
+    }
   }
 }
