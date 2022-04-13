@@ -87,9 +87,6 @@ export default class DynGrid {
     // <h1>Não seja um galado</h1>
     // `;
     // this.dynamicGrid.innerHTML = testGalado;
-    const uniqueId = `
-    KKpXiSYiKOUJ89ZTxbhq
-    `;
     const oldHtml = document.getElementById('cardGrid');
     oldHtml.innerHTML = '';
     this.dynamicGrid.innerHTML = '';
