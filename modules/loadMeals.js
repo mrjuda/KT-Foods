@@ -8,14 +8,3 @@ const loadMeals = async () => {
 };
 
 export default loadMeals;
-
-// const reLoad = document.querySelector('.card-grid');
-
-// const load = () => {
-//   console.log(reLoad);
-//   reLoad.addEventListener('reload', () => {
-//     window.location.reload();
-//   });
-// };
-
-// export default load;

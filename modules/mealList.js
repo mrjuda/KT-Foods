@@ -8,11 +8,17 @@ const mealList = async (data) => {
     const image = document.createElement('img');
     image.classList = 'imgClass';
     const mealName = document.createElement('h3');
+    const comBtn = document.createElement('button');
+    const resBtn = document.createElement('button');
+
+    comBtn.innerHTML = 'Comments';
+    comBtn.classList = 'commentsBtn';
+    resBtn.innerHTML = 'Resservations';
+    comBtn.classList = 'resserveBtn';
 
     const listItem = document.createElement('div');
     listItem.classList = 'gridPoint';
     listItem.id = data[i].idMeal;
-    // foodDiv.setAttribute('data-id, '${data[i].idMeal}');
 
     image.src = data[i].strMealThumb;
     mealName.innerHTML = data[i].strMeal;
