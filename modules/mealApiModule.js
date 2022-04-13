@@ -14,7 +14,7 @@ const cardData = [
   {
     // CARD 1 //
     unqId: 'card1',
-    project: 'Tiesto',
+    project: 'Tiesto the greatest ever',
     imgSrc: '../src/images/pic1.jpg',
   },
   {
@@ -26,25 +26,25 @@ const cardData = [
   {
     // CARD 3 //
     unqId: 'card3',
-    project: 'Madeon',
+    project: 'Madeon the french boy',
     imgSrc: '../src/images/pic3.jpg',
   },
   {
     // CARD 4 //
     unqId: 'card4',
-    project: 'Teigom',
+    project: 'Teigom Teixeira Yup',
     imgSrc: '../src/images/pic4.jpg',
   },
   {
     // CARD 5 //
     unqId: 'card5',
-    project: 'Daft Punk',
+    project: 'Daft Punk french duo',
     imgSrc: '../src/images/pic5.jpg',
   },
   {
     // CARD 6 //
     unqId: 'card6',
-    project: 'Hardwell',
+    project: 'Hardwell well well well',
     imgSrc: '../src/images/pic6.jpg',
   },
 ];

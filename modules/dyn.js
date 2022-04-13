@@ -56,13 +56,13 @@ export default class DynGrid {
     const likeCounter = document.createElement('div');
     likeCounter.classList.add('like-counter');
     likeCounter.innerHTML = `
-    7 likes
+    ${id} likes
     `;
     const commentBtn = document.createElement('div');
     commentBtn.classList.add('comment-btn');
     commentBtn.id = `${id}`;
     commentBtn.innerHTML = `
-    Comments:${id}
+    Comments: ${id}
     `;
     const reserveBtn = document.createElement('div');
     reserveBtn.classList.add('reserve-btn');
@@ -70,7 +70,7 @@ export default class DynGrid {
     // Reservations7
     // `;
     reserveBtn.innerHTML = `
-    ${unqId}
+    Res: ${unqId}
     `;
     cardInfo.appendChild(cardTitle);
     cardInfo.appendChild(likeBtn);
