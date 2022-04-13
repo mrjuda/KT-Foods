@@ -20,7 +20,7 @@ export default class DynGrid {
 
   Getmeal2 = getMeal2;
 
-  genCard = () => {
+  genCard = (id, imgSrc) => {
     // meals > [id] > idMeal
     // const cardId = 'idMeal';
     const cardContainer = document.createElement('div');
@@ -29,7 +29,8 @@ export default class DynGrid {
     const cardPic = document.createElement('div');
     cardPic.classList.add('card-pic');
     const cardPicImg = document.createElement('img');
-    cardPicImg.src = '../src/images/pic2.jpg';
+    // cardPicImg.src = '../src/images/pic2.jpg';
+    cardPicImg.src = `${imgSrc}`;
     cardPic.appendChild(cardPicImg);
     cardContainer.appendChild(cardPic);
     const cardMeta = document.createElement('div');
@@ -45,7 +46,7 @@ export default class DynGrid {
     const cardTitle = document.createElement('div');
     cardTitle.classList.add('card-title');
     cardTitle.innerHTML = `
-    Cumê BB
+    Cumê:${id+1}
     `;
     const likeBtn = document.createElement('img');
     likeBtn.classList.add('like-btn');
@@ -59,8 +60,9 @@ export default class DynGrid {
     `;
     const commentBtn = document.createElement('div');
     commentBtn.classList.add('comment-btn');
+    commentBtn.id = `${id}`;
     commentBtn.innerHTML = `
-    Comments7
+    Comments:${id+1}
     `;
     const reserveBtn = document.createElement('div');
     reserveBtn.classList.add('reserve-btn');
@@ -87,7 +89,8 @@ export default class DynGrid {
     this.dynamicGrid.innerHTML = '';
 
     for (let i = 0; i < 6; i += 1) {
-      this.genCard();
+      let imgSrc = `../src/images/pic${i+1}.jpg`
+      this.genCard(i, imgSrc);
     }
   }
 }
