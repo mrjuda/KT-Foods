@@ -2,6 +2,7 @@
 import './index.scss';
 import loadMeals from '../modules/loadMeals.js';
 import mealList from '../modules/mealList.js';
+import DataApi from './api.js';
 
 window.addEventListener('load', async () => {
   mealList(await loadMeals());
@@ -24,3 +25,5 @@ const getID = async (endpoint) => {
 };
 
 getID('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/');
+
+DataApi();
