@@ -1,8 +1,8 @@
 // dyn.js
 
 import {
-  addLike, getLikes, addComment, getComments,
-} from './socialApiModule.js';
+  pushLike, pullLikes, pushComment, pullComments,
+} from './socialApi.js';
 import { getMeal, getMeal2, cardData } from './mealApiModule.js';
 
 export default class DynGrid {
@@ -12,13 +12,13 @@ export default class DynGrid {
 
   dynamicGrid = document.getElementById('dynamicGrid');
 
-  AddLike = addLike;
+  PushLike = pushLike;
 
-  GetLikes = getLikes;
+  PullLikes = pullLikes;
 
-  AddComment = addComment;
+  PushComment = pushComment;
 
-  GetComments = getComments;
+  PullComments = pullComments;
 
   GetMeal = getMeal;
 

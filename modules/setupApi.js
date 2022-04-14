@@ -1,4 +1,4 @@
-const apiAddress = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
+const apiAddress = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
 
 const newInteraction = async () => {
   const response = await fetch(apiAddress, {
@@ -6,7 +6,7 @@ const newInteraction = async () => {
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
     },
-    body: JSON.stringify({ name: 'KTMeals' }),
+    body: JSON.stringify(),
   });
 
   const data = await response.json();

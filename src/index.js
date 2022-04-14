@@ -7,5 +7,5 @@ const oldHtml = document.getElementById('cardGrid');
 const myDynGrid = new DynGrid();
 
 myDynGrid.hideIt(oldHtml);
-// myDynGrid.showPage();
-myDynGrid.showPopup(2);
+myDynGrid.showPage();
+// myDynGrid.showPopup(2);
