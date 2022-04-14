@@ -32,9 +32,7 @@ ul {
 
 .grid-container {
   display: grid;
-  // grid-template-rows: auto auto auto;
   height: 100vh;
-  // justify-content: space-between;
 }
 
 .header {
@@ -65,12 +63,14 @@ h1 {
   font-size: 1.2rem;
   text-align: center;
   color: #222;
+  margin: 0;
 }
 
 h2 {
   font-size: 1rem;
   text-align: center;
   color: #222;
+  margin: 0;
 }
 
 .card-grid,
@@ -86,11 +86,8 @@ h2 {
   display: flex;
   flex-direction: column;
   background-color: #f1f1f1;
-  // height: fit-content;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
-  // justify-content: space-between;
-  // align-content: space-between;
   align-items: flex-start;
   padding: 0.6rem;
 }
@@ -100,9 +97,6 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // grid-template-columns: auto auto auto;
-  // width: 40vh;
-  // height: 80vh;
   padding: 0.6rem;
   gap: 1rem;
 }
@@ -110,27 +104,15 @@ h2 {
 .card-popup {
   display: flex;
   flex-direction: column;
-  width: 90%;
-  max-width: 70vh;
-  // max-height: 90vh;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  height: 85%;
+  max-width: 100vh;
   background-color: #ddd;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
-  justify-content: center;
-  align-items: center;
-  align-content: space-between;
   padding: 0.6rem;
-}
-
-.card-popup-x {
-  align-self: flex-end;
-  font-size: 1.6rem;
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: bolder;
-  margin-right: 0.2rem;
-  padding: 0;
-  cursor: pointer;
 }
 
 .card-pic {
@@ -139,7 +121,6 @@ h2 {
   text-align: center;
   justify-content: center;
   align-content: center;
-  // width: 30vh;
   height: 25vh;
 
   img {
@@ -147,6 +128,43 @@ h2 {
     object-fit: cover;
     width: 100%;
     height: auto;
+    padding: 0.1rem;
+    border-radius: 0.5rem;
+  }
+}
+
+.empty {
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.popup-x {
+  font-size: 1.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bolder;
+  margin-right: 0.2rem;
+  padding: 0.2rem;
+  cursor: pointer;
+}
+
+.popup-info {
+  width: 100%;
+}
+
+.popup-header {
+  display: grid;
+  grid-template-columns: 2rem auto 2rem;
+  gap: 1rem;
+}
+
+.popup-card-pic {
+  
+  img {
+    overflow: hidden;
+    object-fit: cover;
+    width: 100%;
+    max-height: 30vh;
     padding: 0.1rem;
     border-radius: 0.5rem;
   }
@@ -169,6 +187,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-content: space-between;
+  gap: 0.3rem;
 
   .card-title {
     font-style: italic;
@@ -187,10 +206,20 @@ h2 {
   text-align: end;
 }
 
+.comment-list {
+  background-color: #bbb;
+  margin: 0.4rem 1rem;
+  flex-grow: 2;
+  width: 60vw;
+  max-width: 80vh;
+}
+
 .comment-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 70vw;
+  max-width: 90vh;
 }
 
 input,
@@ -199,17 +228,16 @@ textarea {
   border: solid 2px black;
   font-weight: bold;
   background-color: #fff;
-  margin: 0.2rem;
+  margin: 0.2rem 1.6rem;
   padding: 0.3rem;
 }
 
 input {
-  width: 8rem;
+  width: 55%;
 }
 
 textarea {
-  height: 3rem;
-  width: 14rem;
+  height: 2rem;
 }
 
 .btn,

@@ -77,15 +77,26 @@ export default class DynGrid {
     const cardContainer = document.createElement('div');
     cardContainer.className = 'card-popup';
 
-    const popupX = document.createElement('div');
-    popupX.className = 'card-popup-x';
-    popupX.innerHTML = 'X';
+    const popupInfo = document.createElement('div');
+    popupInfo.className = 'popup-info';
+
+    const popupHeader = document.createElement('div');
+    popupHeader.className = 'popup-header';
+
+    const empty = document.createElement('div');
+    empty.className = 'empty';
+    empty.innerHTML = ' ';
 
     const cardPic = document.createElement('div');
-    cardPic.className = 'card-pic';
-    cardPic.innerHTML = `
-    <img src="${imgSrc}" alt="${foodName}">
-    `;
+    cardPic.className = 'popup-card-pic';
+
+    const popupImg = document.createElement('img');
+    popupImg.src = `${imgSrc}`;
+    popupImg.alt = `${foodName}`;
+
+    const popupX = document.createElement('div');
+    popupX.className = 'popup-x';
+    popupX.innerHTML = 'X';
 
     const cardMeta = document.createElement('div');
     cardMeta.className = 'card-meta';
@@ -95,7 +106,16 @@ export default class DynGrid {
     </div>
     `;
 
+    cardPic.appendChild(popupImg);
+    popupHeader.appendChild(empty);
+    popupHeader.appendChild(cardPic);
+    popupHeader.appendChild(popupX);
+    popupInfo.appendChild(popupHeader);
+    popupInfo.appendChild(cardMeta);
+
     const commentList = document.createElement('div');
+    commentList.className = 'comment-list';
+    commentList.id = 'commentList';
     commentList.innerHTML = `
     <h2 class="comment-counter">Comments (${id})</h2>
     `;
@@ -111,58 +131,9 @@ export default class DynGrid {
     <button id="addCommentBtn" type="button" class="btn">Comment</button>
     `;
 
-    cardContainer.appendChild(popupX);
-    cardContainer.appendChild(cardPic);
-    cardContainer.appendChild(cardMeta);
+    cardContainer.appendChild(popupInfo);
     cardContainer.appendChild(commentList);
     cardContainer.appendChild(commentForm);
-    this.dynamicGrid.appendChild(cardContainer);
-
-    popupX.addEventListener('click', () => {
-      this.showPage();
-    });
-  }
-
-  genCardPopup = (id, unqId, imgSrc, foodName) => {
-    const cardContainer = document.createElement('div');
-    const popupX = document.createElement('div');
-    popupX.innerHTML = 'X';
-    const cardPic = document.createElement('div');
-    const cardPicImg = document.createElement('img');
-    cardPicImg.src = `${imgSrc}`;
-    const cardMeta = document.createElement('div');
-    const cardInfo = document.createElement('div');
-    const cardTitle = document.createElement('div');
-    cardTitle.innerHTML = `${foodName} (${unqId})`;
-    const likeBtn = document.createElement('img');
-    likeBtn.src = '../src/icons/like.png';
-    likeBtn.alt = 'Like button';
-    const commentCounter = document.createElement('div');
-    commentCounter.innerHTML = `Comments (${id})`;
-    const newCommentBtn = document.createElement('div');
-    newCommentBtn.id = `${id}`;
-    newCommentBtn.innerHTML = 'Comment';
-
-    cardPic.classList.add('card-pic');
-    cardMeta.classList.add('card-meta');
-    cardInfo.classList.add('card-info');
-    cardTitle.classList.add('card-title');
-    likeBtn.classList.add('like-btn');
-    commentCounter.classList.add('like-counter');
-    newCommentBtn.classList.add('comment-btn');
-    cardContainer.className = 'card-popup';
-    popupX.className = 'card-popup-x';
-    this.dynamicGrid.className = 'dynamic-grid-popup';
-
-    cardPic.appendChild(cardPicImg);
-    cardInfo.appendChild(cardTitle);
-    cardInfo.appendChild(likeBtn);
-    cardMeta.appendChild(cardInfo);
-    cardMeta.appendChild(commentCounter);
-    cardMeta.appendChild(newCommentBtn);
-    cardContainer.appendChild(popupX);
-    cardContainer.appendChild(cardPic);
-    cardContainer.appendChild(cardMeta);
     this.dynamicGrid.appendChild(cardContainer);
 
     popupX.addEventListener('click', () => {
