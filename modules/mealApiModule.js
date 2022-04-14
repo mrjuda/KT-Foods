@@ -14,37 +14,37 @@ const cardData = [
   {
     // CARD 1 //
     unqId: 'card1',
-    project: 'Tiesto the greatest ever',
+    foodDesc: 'Ensopado invocado',
     imgSrc: '../src/images/pic1.jpg',
   },
   {
     // CARD 2 //
     unqId: 'card2',
-    project: 'Armin Van Buuren',
+    foodDesc: 'Subway bem estranho',
     imgSrc: '../src/images/pic2.jpg',
   },
   {
     // CARD 3 //
     unqId: 'card3',
-    project: 'Madeon the french boy',
+    foodDesc: 'Ginga com tapioca',
     imgSrc: '../src/images/pic3.jpg',
   },
   {
     // CARD 4 //
     unqId: 'card4',
-    project: 'Teigom Teixeira Yup',
+    foodDesc: 'Empadão esquisito',
     imgSrc: '../src/images/pic4.jpg',
   },
   {
     // CARD 5 //
     unqId: 'card5',
-    project: 'Daft Punk french duo',
+    foodDesc: 'Feijoada com milho',
     imgSrc: '../src/images/pic5.jpg',
   },
   {
     // CARD 6 //
     unqId: 'card6',
-    project: 'Hardwell well well well',
+    foodDesc: 'Outro empadão estranho',
     imgSrc: '../src/images/pic6.jpg',
   },
 ];
