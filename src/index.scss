@@ -42,7 +42,6 @@ ul {
   grid-template-columns: auto auto auto auto;
   padding: 0.6rem;
   margin: 0 1rem;
-  height: fit-content;
 
   ul {
     display: flex;
@@ -63,13 +62,21 @@ ul {
 }
 
 h1 {
-  color: #f44;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #222;
+}
+
+h2 {
+  font-size: 1rem;
+  text-align: center;
+  color: #222;
 }
 
 .card-grid,
 .dynamic-grid {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   margin: 0 1rem;
   padding: 0.5rem;
   gap: 1.4rem;
@@ -106,11 +113,11 @@ h1 {
   width: 90%;
   max-width: 70vh;
   // max-height: 90vh;
-  background-color: #f99;
+  background-color: #ddd;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   align-content: space-between;
   padding: 0.6rem;
 }
@@ -150,8 +157,7 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   padding: 0.2rem;
-  width: 93%;
-  padding: 0.2rem;
+  width: 97%;
 
   p {
     padding: 0.4rem;
@@ -161,13 +167,10 @@ h1 {
 
 .card-info {
   display: flex;
-  flex-direction: row;
-  flex-grow: 2;
-  justify-content: space-between;
+  justify-content: center;
   align-content: space-between;
 
   .card-title {
-    width: 80%;
     font-style: italic;
   }
 
@@ -184,6 +187,32 @@ h1 {
   text-align: end;
 }
 
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input,
+textarea {
+  font-size: 0.8rem;
+  border: solid 2px black;
+  font-weight: bold;
+  background-color: #fff;
+  margin: 0.2rem;
+  padding: 0.3rem;
+}
+
+input {
+  width: 8rem;
+}
+
+textarea {
+  height: 3rem;
+  width: 14rem;
+}
+
+.btn,
 .comment-btn,
 .reserve-btn {
   font-size: 0.8rem;
@@ -204,6 +233,7 @@ h1 {
   -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
+.btn:hover,
 .comment-btn:hover,
 .reserve-btn:hover {
   color: #fff;
