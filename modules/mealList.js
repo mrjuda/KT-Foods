@@ -1,4 +1,5 @@
-import { createLikes } from '../src/likesApi';
+// import { createLikes } from '../src/likesApi';
+
 const mealList = async (data) => {
   const main = document.querySelector('#grid');
 
