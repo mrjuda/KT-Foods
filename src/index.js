@@ -5,6 +5,7 @@ import mealList from '../modules/mealList.js';
 import likesContent from './likesApi.js';
 
 window.addEventListener('load', async () => {
+  console.log(await loadMeals());
   mealList(await loadMeals());
 });
 
