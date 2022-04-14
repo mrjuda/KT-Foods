@@ -2,7 +2,7 @@ class likesContent {
   invURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/5P3Y5z2n9UB0UfjvnCPt/likes'
 
   static getLikes = async (id) => {
-    const response  = await fetch(this.url, {
+    const response = await fetch(this.url, {
       method: 'POST',
       body: JSON.stringify({
         item_id: id,
@@ -11,8 +11,8 @@ class likesContent {
         'Content-type': 'application/JSON',
       },
     });
-    const data = await response .text();
-    retrun data;
+    const data = await response.text();
+    return data;
   };
 
   static setLikes = async () => {
@@ -21,3 +21,5 @@ class likesContent {
     return data;
   };
 }
+
+export default { likesContent };
