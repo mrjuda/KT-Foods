@@ -2,7 +2,7 @@ const mealList = async (data) => {
   const main = document.querySelector('#grid');
 
   // for (let i = 0; i <= data.length - 1; i += 1)
-  for (let i = 0; i < 6; i += 1) {
+  for (let i = 0; i < 24; i += 1) {
   // const mealsDiv = document.createElement('div');
 
     const image = document.createElement('img');

@@ -2,7 +2,7 @@
 import './index.scss';
 import loadMeals from '../modules/loadMeals.js';
 import mealList from '../modules/mealList.js';
-import likesContent from './api.js';
+import likesContent from './likesApi.js';
 
 window.addEventListener('load', async () => {
   mealList(await loadMeals());
