@@ -124,12 +124,36 @@ export default class DynGrid {
     commentForm.className = 'comment-form';
     commentForm.innerHTML = `
     <h2 class="comment-counter">Add a comment (${unqId})</h2>
-    <label for="newName"></label>
-    <input type="text" id="newName" name="newName" required maxlength="30" placeholder="Your name" />
-    <label for="newComment"></label>
-    <textarea type="text" id="newComment" name="newComment" required maxlength="300" placeholder="Your comment"></textarea>
-    <button id="addCommentBtn" type="button" class="btn">Comment</button>
     `;
+
+    const newName = document.createElement('input');
+    newName.id = 'newName';
+    newName.type = 'text';
+    newName.className = 'new-name';
+    newName.name = 'newName';
+    newName.required = true;
+    newName.minlength = 1;
+    newName.maxlength = 30;
+    newName.placeholder = 'Your name';
+    commentForm.appendChild(newName);
+
+    const newComment = document.createElement('input');
+    newComment.id = 'newComment';
+    newComment.type = 'textarea';
+    newComment.className = 'new-comment';
+    // newComment.name = 'newComment';
+    // newComment.required = true;
+    // newComment.minlength = 2;
+    // newComment.maxlength = 300;
+    newComment.placeholder = 'Your comment';
+    commentForm.appendChild(newComment);
+
+    const addCommentBtn = document.createElement('button');
+    addCommentBtn.id = `addBtn${id}`;
+    addCommentBtn.type = 'button';
+    addCommentBtn.className = 'btn';
+    addCommentBtn.innerHTML = `Comment (${unqId})`;
+    commentForm.appendChild(addCommentBtn);
 
     cardContainer.appendChild(popupInfo);
     cardContainer.appendChild(commentList);
@@ -138,6 +162,12 @@ export default class DynGrid {
 
     popupX.addEventListener('click', () => {
       this.showPage();
+    });
+
+    addCommentBtn.addEventListener('click', () => {
+      alert(newName);
+      pushComment();
+      commentForm.reset();
     });
   }
 

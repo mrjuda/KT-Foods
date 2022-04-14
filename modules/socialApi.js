@@ -1,4 +1,17 @@
 // socialApi.js
+const apiAddress = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
+const uniqueId = 'G2DduauHAoRnt2LqV9My';
+
+const pushComment = (newComment) => {
+  const pushC = newComment;
+  return pushC;
+};
+
+const pullComments = (id) => {
+  alert(id + apiAddress);
+  const pullC = 'getComments';
+  return pullC;
+};
 
 const pushLike = () => {
   const pushL = 'addLike';
@@ -10,16 +23,6 @@ const pullLikes = () => {
   return pullL;
 };
 
-const pushComment = () => {
-  const pushC = 'addComment';
-  return pushC;
-};
-
-const pullComments = () => {
-  const pullC = 'getComments';
-  return pullC;
-};
-
 export {
-  pushLike, pullLikes, pushComment, pullComments,
+  pushLike, pullLikes, pushComment, pullComments, uniqueId,
 };

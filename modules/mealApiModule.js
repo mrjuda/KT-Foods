@@ -1,7 +1,5 @@
 // mealApiModule.js
 
-const uniqueId = 'G2DduauHAoRnt2LqV9My';
-
 const getMeal = () => {
   const getM = 'getMeal';
   return getM;
@@ -52,5 +50,5 @@ const cardData = [
 ];
 
 export {
-  getMeal, getMeal2, cardData, uniqueId,
+  getMeal, getMeal2, cardData,
 };

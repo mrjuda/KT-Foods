@@ -209,13 +209,20 @@ h2 {
   gap: 1rem;
 }
 
+.popup-card-pic {
+  width: 60vw;
+  max-width: 80vh;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-bottom: 0;
+}
+
 .popup-card-pic img {
   overflow: hidden;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   max-height: 30vh;
-  padding: 0.1rem;
   border-radius: 0.5rem;
 }
 
@@ -230,12 +237,13 @@ h2 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0.2rem;
-  width: 97%;
+  margin-bottom: 0.8rem;
 }
 
 .card-meta p {
-  padding: 0.4rem;
+  padding-top: 0;
+  margin-top: 0;
+  margin: 0;
   text-align: end;
 }
 
@@ -263,18 +271,22 @@ h2 {
 }
 
 .like-counter {
-  margin-top: 0.3rem;
+  padding: 0.6rem;
   text-align: end;
 }
 
 .comment-list {
-  background-color: #bbb;
-  margin: 0.4rem 1rem;
+  background-color: #ccc;
+  margin-bottom: 0.8rem;
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
   width: 60vw;
   max-width: 80vh;
+}
+
+.comment-counter {
+  padding: 0.2rem;
 }
 
 .comment-form {
@@ -285,28 +297,25 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 70vw;
-  max-width: 90vh;
+  background-color: #ccc;
+  width: 60vw;
+  max-width: 80vh;
+  margin-bottom: 0.8rem;
 }
 
 input,
 textarea {
   font-size: 0.8rem;
   border: solid 2px black;
-  font-weight: bold;
   background-color: #fff;
-  margin: 0.2rem 1.6rem;
-  padding: 0.3rem;
+  margin: 0.2rem 0;
 }
 
-input {
-  width: 55%;
+.new-name {
+  width: 50%;
 }
 
-textarea {
+.new-comment {
   height: 2rem;
 }
 
