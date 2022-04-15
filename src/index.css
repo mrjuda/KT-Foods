@@ -133,7 +133,7 @@ h2 {
   gap: 1rem;
 }
 
-.card-popup {
+.popup-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -190,14 +190,72 @@ h2 {
 .popup-x {
   font-size: 1.6rem;
   font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
   font-weight: bolder;
   margin-right: 0.2rem;
   padding: 0.2rem;
   cursor: pointer;
 }
 
-.popup-info {
+.card-meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.card-meta p {
+  padding-top: 0;
+  margin-top: 0;
+  margin: 0;
+  text-align: end;
+}
+
+.card-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0.3rem;
+}
+
+.card-info .card-title {
+  min-height: 3.8rem;
+}
+
+.card-info .card-socials {
+  text-align: right;
+  min-width: 2.8rem;
+  padding: 0;
+  gap: 0;
+}
+
+.card-info .card-socials .like-btn {
+  height: 1.6rem;
+  cursor: pointer;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.card-info .card-socials .like-counter {
+  font-size: 0.8rem;
+  text-align: right;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.meal-info {
   width: 100%;
 }
 
@@ -226,7 +284,7 @@ h2 {
   border-radius: 0.5rem;
 }
 
-.card-meta {
+.popup-meta {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,48 +292,37 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 100%;
   margin-bottom: 0.8rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ccc;
 }
 
-.card-meta p {
-  padding-top: 0;
-  margin-top: 0;
-  margin: 0;
-  text-align: end;
-}
-
-.card-info {
+.popup-meta .popup-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
+  width: 60vw;
+  max-width: 80vh;
+  -ms-flex-item-align: center;
+      align-self: center;
+  justify-self: center;
+  background-color: #999;
   gap: 0.3rem;
 }
 
-.card-info .card-title {
-  font-style: italic;
+.popup-meta .popup-info .popup-title {
+  background-color: #9df;
 }
 
-.card-info .like-btn {
-  text-align: right;
-  padding: 0;
-  height: 1.3rem;
-  cursor: pointer;
-}
-
-.like-counter {
-  padding: 0.6rem;
-  text-align: end;
-}
-
-.comment-list {
+.comment-board {
   background-color: #ccc;
   margin-bottom: 0.8rem;
   -webkit-box-flex: 2;
@@ -317,6 +364,7 @@ textarea {
 
 .new-comment {
   height: 2rem;
+  resize: none;
 }
 
 .btn,
