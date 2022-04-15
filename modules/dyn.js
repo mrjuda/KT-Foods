@@ -201,16 +201,20 @@ export default class DynGrid {
       pushComment(id, newName.value, newComment.value);
       commentForm.reset();
       const newC = true;
+
       this.paintComments(id, commentBoard, newC);
     });
   }
 
   showPage = () => {
+    const cardQt = 6;
+    const logo = document.getElementById('Logo');
+    logo.innerHTML = `KT Foods (${cardQt})`;
     this.dynamicGrid.innerHTML = '';
     this.header.className = 'header';
     this.footer.className = 'footer';
 
-    for (let i = 0; i < 6; i += 1) {
+    for (let i = 0; i < cardQt; i += 1) {
       const cardId = i;
       const picSrc = cardData[i].imgSrc;
       const foodName = cardData[i].foodDesc;
