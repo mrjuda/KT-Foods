@@ -85,7 +85,7 @@ h2 {
 .card-container {
   display: flex;
   flex-direction: column;
-  background-color: #f1f1f1;
+  background-color: #eee;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
   align-items: flex-start;
@@ -99,19 +99,6 @@ h2 {
   align-items: center;
   padding: 0.6rem;
   gap: 1rem;
-}
-
-.popup-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 95%;
-  max-width: 100vh;
-  background-color: #eee;
-  border-radius: 0.5rem;
-  margin-bottom: 0.5rem;
-  padding: 0.6rem;
 }
 
 .card-pic {
@@ -130,6 +117,19 @@ h2 {
     padding: 0.1rem;
     border-radius: 0.5rem;
   }
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  max-width: 100vh;
+  background-color: #eee;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem;
 }
 
 .empty {
@@ -370,10 +370,6 @@ footer {
     padding: 0.5rem;
     gap: 1.6rem;
   }
-
-  .card-container {
-    background-color: #ccc;
-  }
 }
 
 /* #### DESKTOP DESIGN #### */
@@ -390,9 +386,5 @@ footer {
     margin: 0 2.2rem;
     padding: 0.5rem;
     gap: 1rem;
-  }
-
-  .card-container {
-    background-color: #888;
   }
 }

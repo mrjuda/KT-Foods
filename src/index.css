@@ -106,7 +106,7 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #f1f1f1;
+  background-color: #eee;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
   -webkit-box-align: start;
@@ -133,28 +133,6 @@ h2 {
   gap: 1rem;
 }
 
-.popup-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 95%;
-  max-width: 100vh;
-  background-color: #eee;
-  border-radius: 0.5rem;
-  margin-bottom: 0.5rem;
-  padding: 0.6rem;
-}
-
 .card-pic {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -179,6 +157,28 @@ h2 {
   height: auto;
   padding: 0.1rem;
   border-radius: 0.5rem;
+}
+
+.popup-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 95%;
+  max-width: 100vh;
+  background-color: #eee;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem;
 }
 
 .empty {
@@ -463,9 +463,6 @@ footer hr {
     padding: 0.5rem;
     gap: 1.6rem;
   }
-  .card-container {
-    background-color: #ccc;
-  }
 }
 
 /* #### DESKTOP DESIGN #### */
@@ -482,9 +479,6 @@ footer hr {
     margin: 0 2.2rem;
     padding: 0.5rem;
     gap: 1rem;
-  }
-  .card-container {
-    background-color: #888;
   }
 }
 /*# sourceMappingURL=index.css.map */
