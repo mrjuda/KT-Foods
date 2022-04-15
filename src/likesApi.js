@@ -9,6 +9,7 @@ const createLikes = async (data) => {
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
     },
+    // body: JSON.stringify({ item_id: `${data}` }),
     body: JSON.stringify({ item_id: data.item_id }),
   });
 };

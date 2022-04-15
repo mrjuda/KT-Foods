@@ -4,6 +4,8 @@ import {
   pullComments, pullCommCounter, pushComment,
 } from './commentApi.js';
 
+import { updatelike, sendLike } from '../src/likesApi.js';
+
 // import { genPopup } from './commentModule.js';
 // import { getMeal, getMeal2, cardData } from './mealApiModule.js';
 // import loadMeals from './loadMeals.js';  //  USELESS
@@ -25,25 +27,40 @@ export default class DynGrid {
     const cardInfo = document.createElement('div');
     const cardTitle = document.createElement('div');
     cardTitle.innerHTML = `${foodName}`;
+    cardPic.classList.add('card-pic');
+    cardMeta.classList.add('card-meta');
+    cardInfo.classList.add('card-info');
+    cardTitle.classList.add('card-title');
+
+    // LIKES INTERACTIONS
+
     const cardSocials = document.createElement('div');
+    cardSocials.classList.add('card-socials');
     const likeBtn = document.createElement('img');
+    likeBtn.classList.add('like-btn');
     likeBtn.src = '../src/icons/like.png';
     likeBtn.alt = 'Like button';
     const likeCounter = document.createElement('div');
-    likeCounter.innerHTML = `${id} likes`;
+    likeCounter.classList.add('like-counter');
+    // likeCounter.innerHTML = `${id} likes`;
+    const showLikeQt = async (data, i) => {
+      likeCounter.innerHTML = `${await Promise.resolve(updatelike(data[i].unqId))} likes`;
+    };
+    showLikeQt(data, i, unqId);
+    likeBtn.addEventListener('click', async () => {
+      // alert(unqId);
+      // const postLikeData = {
+      //   item_id: unqId,
+      // };
+      await Promise.resolve(sendLike(unqId));
+      likeCounter.innerHTML = `${await Promise.resolve(updatelike(data[i].unqId))} likes`;
+    });
+
     const commentBtn = document.createElement('div');
     commentBtn.id = `${id}`;
     commentBtn.innerHTML = 'Comments';
     // const reserveBtn = document.createElement('div');
     // reserveBtn.innerHTML = 'Reservations';
-
-    cardPic.classList.add('card-pic');
-    cardMeta.classList.add('card-meta');
-    cardInfo.classList.add('card-info');
-    cardTitle.classList.add('card-title');
-    cardSocials.classList.add('card-socials');
-    likeBtn.classList.add('like-btn');
-    likeCounter.classList.add('like-counter');
     commentBtn.classList.add('comment-btn');
     // reserveBtn.classList.add('reserve-btn');
 
@@ -206,7 +223,7 @@ export default class DynGrid {
   };
 
   showPage = async (data) => {
-    const cardQt = 9;
+    const cardQt = 10;
     const home = document.getElementById('Home');
     home.innerHTML = `Home (${cardQt})`;
     this.dynamicGrid.innerHTML = '';
