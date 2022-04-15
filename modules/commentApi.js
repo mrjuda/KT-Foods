@@ -1,4 +1,4 @@
-// socialApi.js
+// commentApi.js
 
 const apiAddress = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
 const unqKey = 'G2DduauHAoRnt2LqV9My';
