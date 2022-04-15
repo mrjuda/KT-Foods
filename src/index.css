@@ -81,7 +81,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-align: center;
   color: #222;
   margin: 0;
@@ -148,9 +148,8 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   width: 95%;
-  height: 85%;
   max-width: 100vh;
-  background-color: #ddd;
+  background-color: #eee;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
   padding: 0.6rem;
@@ -216,7 +215,6 @@ h2 {
 .card-meta p {
   padding-top: 0;
   margin-top: 0;
-  margin: 0;
   text-align: end;
 }
 
@@ -299,7 +297,6 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #ccc;
 }
 
 .popup-meta .popup-info {
@@ -314,22 +311,31 @@ h2 {
   -ms-flex-item-align: center;
       align-self: center;
   justify-self: center;
-  background-color: #999;
   gap: 0.3rem;
 }
 
 .popup-meta .popup-info .popup-title {
-  background-color: #9df;
+  font-style: normal;
 }
 
 .comment-board {
-  background-color: #ccc;
+  background-color: #e2e2e2;
+  border-radius: 5px;
+  padding: 0.5rem;
   margin-bottom: 0.8rem;
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
   width: 60vw;
   max-width: 80vh;
+}
+
+.comment-board span {
+  font-size: 0.7rem;
+}
+
+.comment-board ul li {
+  font-size: 0.7rem;
 }
 
 .comment-counter {
@@ -344,7 +350,9 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #ccc;
+  background-color: #e2e2e2;
+  border-radius: 5px;
+  padding: 0.5rem;
   width: 60vw;
   max-width: 80vh;
   margin-bottom: 0.8rem;

@@ -8,4 +8,4 @@ const myDynGrid = new DynGrid();
 
 myDynGrid.hideIt(oldHtml);
 myDynGrid.showPage();
-// myDynGrid.showPopup(2);
+// myDynGrid.showPopup(3);

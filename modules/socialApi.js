@@ -3,12 +3,7 @@
 const apiAddress = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
 const unqKey = 'G2DduauHAoRnt2LqV9My';
 
-// const pushComment = (newComment) => {
-//   const pushC = newComment;
-//   return pushC;
-// };
 const pushCommentToApi = async (newCommentSet) => {
-  console.log(newCommentSet);
   const outcome = await fetch(`${apiAddress}/${unqKey}/comments`, {
     method: 'POST',
     headers: {
@@ -33,20 +28,8 @@ const pullComments = async (id) => {
   const commListUrl = `${apiAddress}/${unqKey}/comments?item_id=${id}`;
   const outcome = await fetch(commListUrl);
   const commList = await outcome.json();
-  // console.log('cumprida 1: ');
-  // console.log(commList);
   return commList;
 };
-
-// const pullCommCounter = async (id) => {
-//   const commListUrl = `${apiAddress}/${unqKey}/comments?item_id=${id}`;
-//   const outcome = await fetch(commListUrl);
-//   const commList = await outcome.json();
-//   const commQt = commList.length;
-//   // console.log('cumprida 2: ');
-//   // console.log(commQt);
-//   return commQt;
-// };
 
 const pullCommCounter = (commList) => commList.length;
 

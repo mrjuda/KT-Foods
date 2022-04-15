@@ -73,19 +73,16 @@ export default class DynGrid {
 
   paintComments = (id, commentBoard, newC) => {
     if (newC) {
-      const commList = document.getElementById('commList');
-      // commentBoard.removechild(commList);
-      commList.innerHTML = '';
+      const tmpCommBoardContent = document.getElementById('commBoardContent');
+      commentBoard.removeChild(tmpCommBoardContent);
     }
 
     const commBoardContent = document.createElement('div');
-    // commBoardContent.innerText = 'Not yet';
-    // commBoardContent.id = 'commBoardContent';
-    // commBoardContent.classList.add('comm-board-content');
+    commBoardContent.id = 'commBoardContent';
 
     pullComments(id).then((outcome) => {
       if (outcome.error) {
-        commBoardContent.innerHTML = '<h2>Comments: 0</h2> <span>NO COMMENTS</span>';
+        commBoardContent.innerHTML = '<h2>Comments (0)</h2> <span>\nNo comments</span>';
       } else {
         commBoardContent.innerHTML = `<h2>Comments (${pullCommCounter(outcome)})</h2>`;
 
@@ -112,6 +109,7 @@ export default class DynGrid {
     this.dynamicGrid.className = 'dynamic-grid-popup';
     const popupContainer = document.createElement('div');
     popupContainer.className = 'popup-container';
+    popupContainer.id = 'popupContainer';
 
     const mealInfo = document.createElement('div');
     mealInfo.className = 'meal-info';
@@ -152,7 +150,6 @@ export default class DynGrid {
     const commentBoard = document.createElement('div');
     commentBoard.className = 'comment-board';
 
-    // RETRIEVE COMMENTS
     const newC = false;
     this.paintComments(id, commentBoard, newC);
 
@@ -203,7 +200,6 @@ export default class DynGrid {
     addCommentBtn.addEventListener('click', () => {
       pushComment(id, newName.value, newComment.value);
       commentForm.reset();
-      // commentBoard.innerHTML = '';
       const newC = true;
       this.paintComments(id, commentBoard, newC);
     });
