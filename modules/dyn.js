@@ -208,8 +208,8 @@ export default class DynGrid {
 
   showPage = () => {
     const cardQt = 6;
-    const logo = document.getElementById('Logo');
-    logo.innerHTML = `KT Foods (${cardQt})`;
+    const home = document.getElementById('Home');
+    home.innerHTML = `Home (${cardQt})`;
     this.dynamicGrid.innerHTML = '';
     this.header.className = 'header';
     this.footer.className = 'footer';
