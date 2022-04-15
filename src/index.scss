@@ -19,12 +19,14 @@ ul {
 
 header {
   padding: 0.8rem;
+
   ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin: 0;
+
     a {
       color: #000;
     }
@@ -34,10 +36,6 @@ header {
 .logo {
   font-size: 1.4rem;
   font-weight: 900;
-}
-
-h1 {
-  color: #f44
 }
 
 .card-grid {
@@ -56,7 +54,7 @@ h1 {
 
 .card-pic {
   img {
-    width: 90%;
+    width: 10%;
     border-radius: 5px;
   }
 }
@@ -65,22 +63,37 @@ h1 {
   text-align: end;
 }
 
-.card-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  .card-title {
-    width: 80%;
-    font-style: italic;
+#grid {
+  .gridPoint {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 1rem;
   }
-  .like-btn {
-      padding: 0;
-      height: 1.3rem;
+
+  .imgClass {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .count {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+  }
+
+  .like {
+    width: 6%;
+    height: 1.5rem;
+    margin-top: -4rem;
+    margin-left: 23rem;
+    background: rgb(124, 120, 120);
   }
 }
 
-.comment-btn,
-.reserve-btn {
+.commentsBtn {
   font-size: 0.8rem;
   text-align: center;
   font-weight: bold;
@@ -98,13 +111,9 @@ h1 {
   -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
-.comment-btn:hover {
+.commentsBtn:hover {
   color: #fff;
   background-color: #000;
-}
-
-hr {
-  box-shadow: #000;
 }
 
 footer {
