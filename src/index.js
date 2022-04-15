@@ -2,7 +2,6 @@
 import './index.scss';
 import loadMeals from '../modules/loadMeals.js';
 import mealList from '../modules/mealList.js';
-import likesContent from './likesApi.js';
 
 window.addEventListener('load', async () => {
   console.log(await loadMeals());
@@ -26,5 +25,3 @@ const getID = async (endpoint) => {
 };
 
 getID('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/');
-
-likesContent();
