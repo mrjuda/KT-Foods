@@ -227,7 +227,6 @@ export default class DynGrid {
     this.header.className = 'hide';
     this.footer.className = 'hide';
     const cardId = i + 50;
-    alert(cardId);
     const picSrc = cardData[i].imgSrc;
     const foodName = cardData[i].foodDesc;
     this.genPopup(cardId, picSrc, foodName);
