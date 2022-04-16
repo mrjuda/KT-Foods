@@ -1,9 +1,8 @@
 // dyn.js
 
 import {
-  pushLike, pullLikes, pushComment, pullComments, pullCommCounter,
+  pullComments, pullCommCounter, pushComment, pushLike, pullLikes,
 } from './socialApi.js';
-import { getMeal, getMeal2, cardData } from './mealApiModule.js';
 
 export default class DynGrid {
   header = document.getElementById('Header');
@@ -12,15 +11,7 @@ export default class DynGrid {
 
   dynamicGrid = document.getElementById('dynamicGrid');
 
-  PushLike = pushLike;
-
-  PullLikes = pullLikes;
-
-  GetMeal = getMeal;
-
-  Getmeal2 = getMeal2;
-
-  genCard = (i, imgSrc, foodName) => {
+  genCard = (data, i, unqId, imgSrc, foodName) => {
     const id = i + 1;
     const cardContainer = document.createElement('div');
     const cardPic = document.createElement('div');
@@ -30,28 +21,40 @@ export default class DynGrid {
     const cardInfo = document.createElement('div');
     const cardTitle = document.createElement('div');
     cardTitle.innerHTML = `${foodName}`;
+    cardPic.classList.add('card-pic');
+    cardMeta.classList.add('card-meta');
+    cardInfo.classList.add('card-info');
+    cardTitle.classList.add('card-title');
+
+    // LIKES INTERACTIONS
+
     const cardSocials = document.createElement('div');
+    cardSocials.classList.add('card-socials');
     const likeBtn = document.createElement('img');
+    likeBtn.classList.add('like-btn');
     likeBtn.src = '../src/icons/like.png';
     likeBtn.alt = 'Like button';
     const likeCounter = document.createElement('div');
-    likeCounter.innerHTML = `${id} likes`;
+    likeCounter.classList.add('like-counter');
+    const showLikeQt = async (data, i, unqId) => {
+      likeCounter.innerHTML = `${await Promise.resolve(pullLikes(unqId))} likes`;
+    };
+    showLikeQt(data, i, unqId);
+    likeBtn.addEventListener('click', async () => {
+      await Promise.resolve(pushLike(unqId));
+      likeCounter.innerHTML = `${await Promise.resolve(pullLikes(unqId))} likes`;
+    });
+
     const commentBtn = document.createElement('div');
     commentBtn.id = `${id}`;
     commentBtn.innerHTML = 'Comments';
     const reserveBtn = document.createElement('div');
     reserveBtn.innerHTML = 'Reservations';
-
-    cardPic.classList.add('card-pic');
-    cardMeta.classList.add('card-meta');
-    cardInfo.classList.add('card-info');
-    cardTitle.classList.add('card-title');
-    cardSocials.classList.add('card-socials');
-    likeBtn.classList.add('like-btn');
-    likeCounter.classList.add('like-counter');
     commentBtn.classList.add('comment-btn');
     reserveBtn.classList.add('reserve-btn');
+
     cardContainer.className = 'card-container';
+    cardContainer.id = `${unqId}`;
     this.dynamicGrid.className = 'dynamic-grid';
 
     cardPic.appendChild(cardPicImg);
@@ -67,7 +70,7 @@ export default class DynGrid {
     this.dynamicGrid.appendChild(cardContainer);
 
     commentBtn.addEventListener('click', () => {
-      this.showPopup(i);
+      this.showPopup(data, i);
     });
   }
 
@@ -92,7 +95,7 @@ export default class DynGrid {
           commList.innerHTML += `
           <li>
           <span>[${comment.creation_date}]</span>
-          <span>${comment.username}: </span>
+          <span class="commentator">${comment.username}: </span>
           <span> ${comment.comment}</span>
           </li>
           `;
@@ -105,8 +108,9 @@ export default class DynGrid {
     commentBoard.appendChild(commBoardContent);
   };
 
-  genPopup = (id, imgSrc, foodName) => {
-    this.dynamicGrid.className = 'dynamic-grid-popup';
+  genPopupCom = (data, id, unqId, imgSrc, foodName) => {
+    const dynamicGrid = document.getElementById('dynamicGrid');
+    dynamicGrid.className = 'dynamic-grid-popup';
     const popupContainer = document.createElement('div');
     popupContainer.className = 'popup-container';
     popupContainer.id = 'popupContainer';
@@ -191,45 +195,47 @@ export default class DynGrid {
     popupContainer.appendChild(commentBoard);
     popupContainer.appendChild(commentForm);
 
-    this.dynamicGrid.appendChild(popupContainer);
+    dynamicGrid.appendChild(popupContainer);
 
     popupX.addEventListener('click', () => {
-      this.showPage();
+      this.showPage(data);
     });
 
     addCommentBtn.addEventListener('click', () => {
       pushComment(id, newName.value, newComment.value);
       commentForm.reset();
       const newC = true;
-
       this.paintComments(id, commentBoard, newC);
     });
-  }
+  };
 
-  showPage = () => {
-    const cardQt = 6;
-    const logo = document.getElementById('Logo');
-    logo.innerHTML = `KT Foods (${cardQt})`;
+  showPage = async (data) => {
+    const cardQt = 14;
+    const home = document.getElementById('Home');
+    home.innerHTML = `Home (${cardQt})`;
     this.dynamicGrid.innerHTML = '';
     this.header.className = 'header';
     this.footer.className = 'footer';
+    const dataSet = data;
 
     for (let i = 0; i < cardQt; i += 1) {
       const cardId = i;
-      const picSrc = cardData[i].imgSrc;
-      const foodName = cardData[i].foodDesc;
-      this.genCard(cardId, picSrc, foodName);
+      const cardUnqId = data[i].idMeal;
+      const picSrc = data[i].strMealThumb;
+      const foodName = data[i].strMeal;
+      this.genCard(dataSet, cardId, cardUnqId, picSrc, foodName);
     }
   }
 
-  showPopup = (i) => {
+  showPopup = (data, i) => {
     this.dynamicGrid.innerHTML = '';
     this.header.className = 'hide';
     this.footer.className = 'hide';
-    const cardId = i + 121;
-    const picSrc = cardData[i].imgSrc;
-    const foodName = cardData[i].foodDesc;
-    this.genPopup(cardId, picSrc, foodName);
+    const cardId = i;
+    const cardUnqId = data[i].idMeal;
+    const picSrc = data[i].strMealThumb;
+    const foodName = data[i].strMeal;
+    this.genPopupCom(data, cardId, cardUnqId, picSrc, foodName);
   }
 
   hideIt = (item) => {

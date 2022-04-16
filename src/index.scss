@@ -74,7 +74,8 @@ h2 {
 }
 
 .card-grid,
-.dynamic-grid {
+.dynamic-grid,
+.card-grid {
   display: grid;
   grid-template-columns: 1fr;
   margin: 0 11%;
@@ -85,7 +86,7 @@ h2 {
 .card-container {
   display: flex;
   flex-direction: column;
-  background-color: #f1f1f1;
+  background-color: #eee;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
   align-items: flex-start;
@@ -99,19 +100,6 @@ h2 {
   align-items: center;
   padding: 0.6rem;
   gap: 1rem;
-}
-
-.popup-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 95%;
-  max-width: 100vh;
-  background-color: #eee;
-  border-radius: 0.5rem;
-  margin-bottom: 0.5rem;
-  padding: 0.6rem;
 }
 
 .card-pic {
@@ -129,7 +117,22 @@ h2 {
     height: auto;
     padding: 0.1rem;
     border-radius: 0.5rem;
+    width: 100%;
+    border-radius: 5px;
   }
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  max-width: 100vh;
+  background-color: #eee;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem;
 }
 
 .empty {
@@ -251,14 +254,44 @@ h2 {
   width: 60vw;
   max-width: 80vh;
 
-  span {
-    font-size: 0.7rem;
-  }
-
   ul {
     li {
       font-size: 0.7rem;
+
+      .commentator {
+        font-weight: bolder;
+      }
     }
+  }
+}
+
+#grid {
+  .gridPoint {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 1rem;
+  }
+
+  .imgClass {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .count {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+  }
+
+  .like {
+    width: 6%;
+    height: 1.5rem;
+    margin-top: -4rem;
+    margin-left: 23rem;
+    background: rgb(124, 120, 120);
   }
 }
 
@@ -296,6 +329,7 @@ textarea {
 
 .btn,
 .comment-btn,
+.commentsBtn,
 .reserve-btn {
   font-size: 0.8rem;
   font-weight: bold;
@@ -317,7 +351,8 @@ textarea {
 
 .btn:hover,
 .comment-btn:hover,
-.reserve-btn:hover {
+.reserve-btn:hover,
+.commentsBtn:hover {
   color: #fff;
   background-color: #000;
 }
@@ -370,15 +405,11 @@ footer {
     padding: 0.5rem;
     gap: 1.6rem;
   }
-
-  .card-container {
-    background-color: #ccc;
-  }
 }
 
 /* #### DESKTOP DESIGN #### */
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px){
   .header {
     margin: 0 2.2rem;
   }
@@ -390,9 +421,5 @@ footer {
     margin: 0 2.2rem;
     padding: 0.5rem;
     gap: 1rem;
-  }
-
-  .card-container {
-    background-color: #888;
   }
 }
