@@ -331,6 +331,10 @@ h2 {
   max-width: 80vh;
 }
 
+.comment-board span {
+  font-size: 0.7rem;
+}
+
 .comment-board ul li {
   font-size: 0.7rem;
 }

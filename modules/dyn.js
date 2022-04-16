@@ -80,16 +80,18 @@ export default class DynGrid {
     const commBoardContent = document.createElement('div');
     commBoardContent.id = 'commBoardContent';
 
-    const span = document.createElement('span');
-    const para = document.createElement('h2');
+    const cmHeader = document.createElement('h2');
+    const cmCounter = document.createElement('span');
+
     pullComments(id).then((outcome) => {
       if (outcome.error) {
         commBoardContent.innerHTML = '<h2>Comments (0)</h2> <span>\nNo comments</span>';
       } else {
-        span.textContent = pullCommCounter(outcome);
-        para.textContent = 'Comments ';
-        para.appendChild(span);
-        commBoardContent.append(para);
+        cmCounter.textContent = pullCommCounter(outcome);
+        cmHeader.textContent = 'Comments (';
+        cmHeader.appendChild(cmCounter);
+        cmHeader.innerHTML += ')';
+        commBoardContent.append(cmHeader);
 
         const commList = document.createElement('ul');
         commList.id = 'commList';
@@ -203,15 +205,20 @@ export default class DynGrid {
       this.showPage(data);
     });
 
-    addCommentBtn.addEventListener('click', () => {
-      pushComment(id, newName.value, newComment.value);
+    addCommentBtn.addEventListener('click', async () => {
+      // PUSH NEW COMMENT TO API
+      // pushComment(id, newName.value, newComment.value);
+      await Promise.resolve(pushComment(id, newName.value, newComment.value));
       commentForm.reset();
+      // UPDATES THE COMMENT BOARD WITH THE NEW COMMENT
       const newC = true;
-      this.paintComments(id, commentBoard, newC);
+      // this.paintComments(id, commentBoard, newC);
+      await Promise.resolve(this.paintComments(id, commentBoard, newC));
+      // likeCounter.innerHTML = `${await Promise.resolve(pullLikes(unqId))} likes`;
     });
     const commBoardContent = document.createElement('div');
-    commBoardContent.id = 'commBoardContent';
-    commBoardContent.innerHTML = '<h2>Comments 2</h2>';
+    // commBoardContent.id = 'commBoardContent';
+    // commBoardContent.innerHTML = '<h2>Comments 2</h2>';
 
     const commList = document.createElement('ul');
     commList.id = 'commList';
