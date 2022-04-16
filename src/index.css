@@ -423,7 +423,8 @@ textarea {
 
 .btn,
 .comment-btn,
-.commentsBtn {
+.commentsBtn,
+.reserve-btn {
   font-size: 0.8rem;
   font-weight: bold;
   text-align: center;

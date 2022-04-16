@@ -1,14 +1,10 @@
 // dyn.js
 
 import {
-  pullComments, pullCommCounter, pushComment,
-} from './commentApi.js';
+  pushComment, pullComments, commentCounter, pushLike, pullLikes,
+} from './socialApi.js';
 
-import { updatelike, sendLike } from '../src/likesApi.js';
-
-// import { genPopup } from './commentModule.js';
-// import { getMeal, getMeal2, cardData } from './mealApiModule.js';
-// import loadMeals from './loadMeals.js';  //  USELESS
+// import { updatelike, sendLike } from '../src/likesApi.js';
 
 export default class DynGrid {
   header = document.getElementById('Header');
@@ -42,27 +38,22 @@ export default class DynGrid {
     likeBtn.alt = 'Like button';
     const likeCounter = document.createElement('div');
     likeCounter.classList.add('like-counter');
-    // likeCounter.innerHTML = `${id} likes`;
-    const showLikeQt = async (data, i) => {
-      likeCounter.innerHTML = `${await Promise.resolve(updatelike(data[i].unqId))} likes`;
+    const showLikeQt = async (data, i, unqId) => {
+      likeCounter.innerHTML = `${await Promise.resolve(pullLikes(unqId))} likes`;
     };
     showLikeQt(data, i, unqId);
     likeBtn.addEventListener('click', async () => {
-      // alert(unqId);
-      // const postLikeData = {
-      //   item_id: unqId,
-      // };
-      await Promise.resolve(sendLike(unqId));
-      likeCounter.innerHTML = `${await Promise.resolve(updatelike(data[i].unqId))} likes`;
+      await Promise.resolve(pushLike(unqId));
+      likeCounter.innerHTML = `${await Promise.resolve(pullLikes(unqId))} likes`;
     });
 
     const commentBtn = document.createElement('div');
     commentBtn.id = `${id}`;
     commentBtn.innerHTML = 'Comments';
-    // const reserveBtn = document.createElement('div');
-    // reserveBtn.innerHTML = 'Reservations';
+    const reserveBtn = document.createElement('div');
+    reserveBtn.innerHTML = 'Reservations';
     commentBtn.classList.add('comment-btn');
-    // reserveBtn.classList.add('reserve-btn');
+    reserveBtn.classList.add('reserve-btn');
 
     cardContainer.className = 'card-container';
     cardContainer.id = `${unqId}`;
@@ -75,7 +66,7 @@ export default class DynGrid {
     cardInfo.appendChild(cardSocials);
     cardMeta.appendChild(cardInfo);
     cardMeta.appendChild(commentBtn);
-    // cardMeta.appendChild(reserveBtn);
+    cardMeta.appendChild(reserveBtn);
     cardContainer.appendChild(cardPic);
     cardContainer.appendChild(cardMeta);
     this.dynamicGrid.appendChild(cardContainer);
@@ -98,7 +89,7 @@ export default class DynGrid {
       if (outcome.error) {
         commBoardContent.innerHTML = '<h2>Comments (0)</h2> <span>\nNo comments</span>';
       } else {
-        commBoardContent.innerHTML = `<h2>Comments (${pullCommCounter(outcome)})</h2>`;
+        commBoardContent.innerHTML = `<h2>Comments (${commentCounter(outcome)})</h2>`;
 
         const commList = document.createElement('ul');
         commList.id = 'commList';
@@ -223,7 +214,7 @@ export default class DynGrid {
   };
 
   showPage = async (data) => {
-    const cardQt = 10;
+    const cardQt = 14;
     const home = document.getElementById('Home');
     home.innerHTML = `Home (${cardQt})`;
     this.dynamicGrid.innerHTML = '';
