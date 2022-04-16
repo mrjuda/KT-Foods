@@ -2,7 +2,7 @@
 
 import {
   pullComments, pullCommCounter, pushComment, pushLike, pullLikes,
-} from './socialApi.js';
+} from './socialApi';
 
 export default class DynGrid {
   header = document.getElementById('Header');

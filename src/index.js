@@ -1,9 +1,9 @@
 /* eslint-disable import/no-unresolved */
 // index.js
 
-import DynGrid from '../modules/dyn.js';
+import DynGrid from '../modules/dyn';
 import './index.scss';
-import loadMeals from '../modules/loadMeals.js';
+import loadMeals from '../modules/loadMeals';
 
 const myDynGrid = new DynGrid();
 window.addEventListener('load', async () => {
