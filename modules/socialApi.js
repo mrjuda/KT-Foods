@@ -34,41 +34,7 @@ const pullComments = async (id) => {
 
 const pullCommCounter = (commList) => commList.length;
 
-const pushLikeToApi = async (pushThisToApi) => {
-  const outcome = await fetch(likesUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(pushThisToApi),
-  });
-  return outcome;
-};
 
-const pushLike = async (unqId) => {
-  const likedItem = {
-    item_id: unqId,
-  };
-  Promise.resolve(await pushLikeToApi(likedItem));
-};
-
-const getLikesFromApi = async () => {
-  const outcome = await fetch(likesUrl);
-  const likeList = await outcome.json();
-  return likeList;
-};
-
-const pullLikes = async (unqId) => {
-  const allLikedItems = await Promise.resolve(getLikesFromApi());
-  const likeList = (allLikedItems);
-  let likeCounter = 0;
-  for (let i = 0; i < likeList.length; i += 1) {
-    if (likeList[i].item_id === unqId) {
-      likeCounter = likeList[i].likes;
-    }
-  }
-  return likeCounter;
-};
 
 export {
   pushLike, pullLikes, pushComment, pullComments, pullCommCounter, unqKey,
