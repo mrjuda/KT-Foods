@@ -207,18 +207,13 @@ export default class DynGrid {
 
     addCommentBtn.addEventListener('click', async () => {
       // PUSH NEW COMMENT TO API
-      // pushComment(id, newName.value, newComment.value);
       await Promise.resolve(pushComment(id, newName.value, newComment.value));
       commentForm.reset();
       // UPDATES THE COMMENT BOARD WITH THE NEW COMMENT
       const newC = true;
-      // this.paintComments(id, commentBoard, newC);
       await Promise.resolve(this.paintComments(id, commentBoard, newC));
-      // likeCounter.innerHTML = `${await Promise.resolve(pullLikes(unqId))} likes`;
     });
     const commBoardContent = document.createElement('div');
-    // commBoardContent.id = 'commBoardContent';
-    // commBoardContent.innerHTML = '<h2>Comments 2</h2>';
 
     const commList = document.createElement('ul');
     commList.id = 'commList';
