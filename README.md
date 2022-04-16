@@ -9,6 +9,11 @@ Choose a meal of your preference, hit like, and comment.
 This web displays characters from TheMealDB and allows to post likes and comments thanks to the Involvement API, which also allow the page to show a counter of these posts. The project was built using SCSS, JS, HTML and Webpack and tested through Jest.
 develop
 
+## 📺 Live Demo
+- Live version: [mrjuda.github.io/capstone1](https://mrjuda.github.io/capstone1/dist/)
+## 🎥 Video presentation
+[Video Presentation](https://www.loom.com/share/a18db8a391e34cebb3b37c6a834d7eaa)
+
 ## 🛠 Built with
 - HTML5
 - CSS3
