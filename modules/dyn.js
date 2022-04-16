@@ -1,4 +1,5 @@
 // dyn.js
+import image from '../src/icons/like.png';
 
 import {
   pullComments, pullCommCounter, pushComment, pushLike, pullLikes,
@@ -29,7 +30,7 @@ export default class DynGrid {
     cardSocials.classList.add('card-socials');
     const likeBtn = document.createElement('img');
     likeBtn.classList.add('like-btn');
-    likeBtn.src = '../src/icons/like.png';
+    likeBtn.src = image;
     likeBtn.alt = 'Like button';
     const likeCounter = document.createElement('div');
     likeCounter.classList.add('like-counter');
@@ -79,11 +80,16 @@ export default class DynGrid {
     const commBoardContent = document.createElement('div');
     commBoardContent.id = 'commBoardContent';
 
+    const span = document.createElement('span');
+    const para = document.createElement('h2');
     pullComments(id).then((outcome) => {
       if (outcome.error) {
         commBoardContent.innerHTML = '<h2>Comments (0)</h2> <span>\nNo comments</span>';
       } else {
-        commBoardContent.innerHTML = `<h2>Comments (${pullCommCounter(outcome)})</h2>`;
+        span.textContent = pullCommCounter(outcome);
+        para.textContent = 'Comments ';
+        para.appendChild(span);
+        commBoardContent.append(para);
 
         const commList = document.createElement('ul');
         commList.id = 'commList';
@@ -203,6 +209,20 @@ export default class DynGrid {
       const newC = true;
       this.paintComments(id, commentBoard, newC);
     });
+    const commBoardContent = document.createElement('div');
+    commBoardContent.id = 'commBoardContent';
+    commBoardContent.innerHTML = `<h2>Comments 2</h2>`;
+
+    const commList = document.createElement('ul');
+    commList.id = 'commList';
+    commList.innerHTML += `
+    <li>
+    
+    <span class="commentator">${newName.value}: </span>
+    <span> ${newComment.value}</span>
+    </li>
+    `;
+    commentBoard.appendChild(commBoardContent);
   };
 
   showPage = async (data) => {
