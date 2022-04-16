@@ -4,7 +4,6 @@
 KT Meals is a food appreciation website.
 Choose a meal of your preference, hit like, and comment.
 This web displays characters from TheMealDB and allows to post likes and comments thanks to the Involvement API, which also allow the page to show a counter of these posts. The project was built using SCSS, JS, HTML and Webpack and tested through Jest.
-develop
 
 ## 📺 Live Demo
 - Live version: [mrjuda.github.io/capstone1](https://mrjuda.github.io/capstone1/dist/)
