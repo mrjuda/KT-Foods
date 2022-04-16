@@ -73,7 +73,6 @@ h2 {
   margin: 0;
 }
 
-.card-grid,
 .dynamic-grid,
 .card-grid {
   display: grid;
@@ -117,7 +116,6 @@ h2 {
     height: auto;
     padding: 0.1rem;
     border-radius: 0.5rem;
-    width: 100%;
     border-radius: 5px;
   }
 }
@@ -409,7 +407,7 @@ footer {
 
 /* #### DESKTOP DESIGN #### */
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
   .header {
     margin: 0 2.2rem;
   }

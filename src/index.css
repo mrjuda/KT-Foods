@@ -87,7 +87,6 @@ h2 {
   margin: 0;
 }
 
-.card-grid,
 .dynamic-grid,
 .card-grid {
   display: -ms-grid;
@@ -158,7 +157,6 @@ h2 {
   height: auto;
   padding: 0.1rem;
   border-radius: 0.5rem;
-  width: 100%;
   border-radius: 5px;
 }
 
@@ -339,6 +337,49 @@ h2 {
 
 .comment-board ul li .commentator {
   font-weight: bolder;
+}
+
+#grid .gridPoint {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem;
+}
+
+#grid .imgClass {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  border-radius: 5px;
+}
+
+#grid .count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: end;
+}
+
+#grid .like {
+  width: 6%;
+  height: 1.5rem;
+  margin-top: -4rem;
+  margin-left: 23rem;
+  background: #7c7878;
 }
 
 .comment-counter {

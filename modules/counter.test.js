@@ -1,4 +1,4 @@
-const getCount = require('./modules/counter.js');
+const getCount = require('./counter.js');
 
 const items = [
   {
