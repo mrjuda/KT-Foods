@@ -25,9 +25,22 @@ export default class DynGrid {
     cardMeta.classList.add('card-meta');
     cardInfo.classList.add('card-info');
     cardTitle.classList.add('card-title');
-
-    
-
+    const cardSocials = document.createElement('div');
+    cardSocials.classList.add('card-socials');
+    const likeBtn = document.createElement('img');
+    likeBtn.classList.add('like-btn');
+    likeBtn.src = '../src/icons/like.png';
+    likeBtn.alt = 'Like button';
+    const likeCounter = document.createElement('div');
+    likeCounter.classList.add('like-counter');
+    const showLikeQt = async (data, i, unqId) => {
+      likeCounter.innerHTML = `${await Promise.resolve(pullLikes(unqId))} likes`;
+    };
+    showLikeQt(data, i, unqId);
+    likeBtn.addEventListener('click', async () => {
+      await Promise.resolve(pushLike(unqId));
+      likeCounter.innerHTML = `${await Promise.resolve(pullLikes(unqId))} likes`;
+    });
     const commentBtn = document.createElement('div');
     commentBtn.id = `${id}`;
     commentBtn.innerHTML = 'Comments';
