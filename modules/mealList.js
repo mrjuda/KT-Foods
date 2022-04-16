@@ -1,6 +1,5 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-await-in-loop */
-import { updatelike, sendLike } from '../src/likesApi.js';
 
 import loadMeals from './loadMeals.js';
 
