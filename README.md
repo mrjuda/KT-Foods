@@ -16,6 +16,7 @@ develop
 
 ## 🛠 Built with
 - HTML5
+- Git & Github
 - CSS3
 - ES6
 - Webpack
