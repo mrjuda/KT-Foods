@@ -211,7 +211,7 @@ export default class DynGrid {
     });
     const commBoardContent = document.createElement('div');
     commBoardContent.id = 'commBoardContent';
-    commBoardContent.innerHTML = `<h2>Comments 2</h2>`;
+    commBoardContent.innerHTML = '<h2>Comments 2</h2>';
 
     const commList = document.createElement('ul');
     commList.id = 'commList';
