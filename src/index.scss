@@ -40,8 +40,6 @@ ul {
   grid-template-columns: auto auto auto auto;
   padding: 0.6rem;
   margin: 0 1rem;
-header {
-  padding: 0.8rem;
 
   ul {
     display: flex;
@@ -76,7 +74,7 @@ h2 {
 }
 
 .card-grid,
-.dynamic-grid {
+.dynamic-grid,
 .card-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -119,7 +117,7 @@ h2 {
     height: auto;
     padding: 0.1rem;
     border-radius: 0.5rem;
-    width: 10%;
+    width: 100%;
     border-radius: 5px;
   }
 }
@@ -258,7 +256,9 @@ h2 {
 
   span {
     font-size: 0.7rem;
-=======
+  }
+}
+
 #grid {
   .gridPoint {
     display: flex;
@@ -350,7 +350,7 @@ textarea {
 
 .btn:hover,
 .comment-btn:hover,
-.reserve-btn:hover {
+.reserve-btn:hover,
 .commentsBtn:hover {
   color: #fff;
   background-color: #000;
@@ -408,7 +408,7 @@ footer {
 
 /* #### DESKTOP DESIGN #### */
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px){
   .header {
     margin: 0 2.2rem;
   }
@@ -421,8 +421,4 @@ footer {
     padding: 0.5rem;
     gap: 1rem;
   }
-  
-  margin-top: 2rem;
-  padding: 1rem;
-  text-align: left;
 }
