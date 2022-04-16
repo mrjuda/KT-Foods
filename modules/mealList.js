@@ -40,6 +40,7 @@ const mealList = async (data) => {
     const likesCount = document.createElement('p');
     likesCount.classList.add('likes-count');
     likesCount.innerHTML = `${await Promise.resolve(
+      // eslint-disable-next-line comma-dangle
       updatelike(data[i].idMeal)
     )} likes`;
     likesText.appendChild(likesCount);
@@ -47,6 +48,7 @@ const mealList = async (data) => {
     like.addEventListener('click', async () => {
       await Promise.resolve(sendLike(data[i].idMeal));
       likesCount.innerHTML = `${await Promise.resolve(
+        // eslint-disable-next-line comma-dangle
         updatelike(data[i].idMeal)
       )} likes`;
     });
