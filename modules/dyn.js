@@ -95,7 +95,7 @@ export default class DynGrid {
           commList.innerHTML += `
           <li>
           <span>[${comment.creation_date}]</span>
-          <span>${comment.username}: </span>
+          <span class="commentator">${comment.username}: </span>
           <span> ${comment.comment}</span>
           </li>
           `;
@@ -108,8 +108,7 @@ export default class DynGrid {
     commentBoard.appendChild(commBoardContent);
   };
 
-  // FORMER genPopup function position
-  genPopup = (data, id, unqId, imgSrc, foodName) => {
+  genPopupCom = (data, id, unqId, imgSrc, foodName) => {
     const dynamicGrid = document.getElementById('dynamicGrid');
     dynamicGrid.className = 'dynamic-grid-popup';
     const popupContainer = document.createElement('div');
@@ -206,7 +205,6 @@ export default class DynGrid {
       pushComment(id, newName.value, newComment.value);
       commentForm.reset();
       const newC = true;
-
       this.paintComments(id, commentBoard, newC);
     });
   };
@@ -237,7 +235,7 @@ export default class DynGrid {
     const cardUnqId = data[i].idMeal;
     const picSrc = data[i].strMealThumb;
     const foodName = data[i].strMeal;
-    this.genPopup(data, cardId, cardUnqId, picSrc, foodName);
+    this.genPopupCom(data, cardId, cardUnqId, picSrc, foodName);
   }
 
   hideIt = (item) => {

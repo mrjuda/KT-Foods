@@ -37,10 +37,6 @@ const mealList = async (data) => {
     like.classList.add('like');
     like.appendChild(icon);
 
-    // const like = document.createElement('button');
-    // like.classList.add('like');
-    // likesText.appendChild(like);
-
     const likesCount = document.createElement('p');
     likesCount.classList.add('likes-count');
     likesCount.innerHTML = `${await Promise.resolve(updatelike(data[i].idMeal))} likes`;

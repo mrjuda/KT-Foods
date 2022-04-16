@@ -333,8 +333,12 @@ h2 {
   max-width: 80vh;
 }
 
-.comment-board span {
+.comment-board ul li {
   font-size: 0.7rem;
+}
+
+.comment-board ul li .commentator {
+  font-weight: bolder;
 }
 
 #grid .gridPoint {
@@ -378,10 +382,6 @@ h2 {
   margin-top: -4rem;
   margin-left: 23rem;
   background: #7c7878;
-}
-
-#grid ul li {
-  font-size: 0.7rem;
 }
 
 .comment-counter {
