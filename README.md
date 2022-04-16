@@ -1,10 +1,8 @@
 
-# KT Meals
+# KT Meals Inc
 ## 📑 Project description
 KT Meals is a food appreciation website.
 Choose a meal of your preference, hit like, and comment.
-
-# Kanban Board
 
 ## 📑 Project description
 
