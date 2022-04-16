@@ -1,10 +1,8 @@
 // dyn.js
 
 import {
-  pushComment, pullComments, commentCounter, pushLike, pullLikes,
+  pullComments, pullCommCounter, pushComment, pushLike, pullLikes,
 } from './socialApi.js';
-
-// import { updatelike, sendLike } from '../src/likesApi.js';
 
 export default class DynGrid {
   header = document.getElementById('Header');
@@ -89,7 +87,7 @@ export default class DynGrid {
       if (outcome.error) {
         commBoardContent.innerHTML = '<h2>Comments (0)</h2> <span>\nNo comments</span>';
       } else {
-        commBoardContent.innerHTML = `<h2>Comments (${commentCounter(outcome)})</h2>`;
+        commBoardContent.innerHTML = `<h2>Comments (${pullCommCounter(outcome)})</h2>`;
 
         const commList = document.createElement('ul');
         commList.id = 'commList';

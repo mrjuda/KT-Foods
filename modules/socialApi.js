@@ -33,7 +33,7 @@ const pullComments = async (id) => {
   return commList;
 };
 
-const commentCounter = (commList) => commList.length;
+const pullCommCounter = (commList) => commList.length;
 
 // LIKES
 
@@ -55,6 +55,11 @@ const pushLike = async (unqId) => {
   Promise.resolve(await pushLikeToApi(likedItem));
 };
 
+// const pullLikes = () => {
+//   const pullL = 'getLikes';
+//   return pullL;
+// };
+
 const getLikesFromApi = async () => {
   const outcome = await fetch(likesUrl);
   const likeList = await outcome.json();
@@ -74,5 +79,5 @@ const pullLikes = async (unqId) => {
 };
 
 export {
-  pushComment, pullComments, commentCounter, pushLike, pullLikes, unqKey,
+  pushLike, pullLikes, pushComment, pullComments, pullCommCounter, unqKey,
 };
