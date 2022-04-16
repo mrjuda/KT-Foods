@@ -98,21 +98,21 @@ export default class DynGrid {
         outcome.forEach((comment) => {
           commList.innerHTML += `
           <li>
-          <span>[${comment.creation_date}]</span>
-          <span class="commentator">${comment.username}: </span>
-          <span> ${comment.comment}</span>
+            <span>[${comment.creation_date}]</span>
+            <span class="commentator">${comment.username}: </span>
+            <span> ${comment.comment}</span>
           </li>
           `;
         });
         commBoardContent.appendChild(commList);
       }
     }, () => {
-      commBoardContent.innerHTML = '<span> NO COMMENTSSS</span>';
+      commBoardContent.innerHTML = '<span>NO COMMENTS</span>';
     });
     commentBoard.appendChild(commBoardContent);
   };
 
-  genPopupCom = (data, id, unqId, imgSrc, foodName) => {
+  genPopupCom = (data, id, unqId, imgSrc, foodName, fCat, fOrig, fTags, fVideo, fInst) => {
     const dynamicGrid = document.getElementById('dynamicGrid');
     dynamicGrid.className = 'dynamic-grid-popup';
     const popupContainer = document.createElement('div');
@@ -142,9 +142,17 @@ export default class DynGrid {
 
     const popupMeta = document.createElement('div');
     popupMeta.className = 'popup-meta';
+
     popupMeta.innerHTML = `
     <div class="popup-info">
       <h1 class="popup-title">${foodName}</h1>
+      <div class="popup-meal-details">
+        <span>Category: ${fCat}</span> &nbsp; &nbsp; &nbsp; &nbsp;
+        <span>Origin: ${fOrig}</span> &nbsp; &nbsp; &nbsp; &nbsp;
+        <span>Tags: ${fTags}</span></br>
+        <span>Recipe's video: <a href="${fVideo}">${fVideo}</a></span></br>
+        <p>Instructions: ${fInst}</p>
+      </div>
     </div>
     `;
 
@@ -213,15 +221,15 @@ export default class DynGrid {
       const newC = true;
       await Promise.resolve(this.paintComments(id, commentBoard, newC));
     });
+
     const commBoardContent = document.createElement('div');
 
     const commList = document.createElement('ul');
     commList.id = 'commList';
     commList.innerHTML += `
     <li>
-    
-    <span class="commentator">${newName.value}: </span>
-    <span> ${newComment.value}</span>
+      <span class="commentator">${newName.value}: </span>
+      <span> ${newComment.value}</span>
     </li>
     `;
     commentBoard.appendChild(commBoardContent);
@@ -253,7 +261,13 @@ export default class DynGrid {
     const cardUnqId = data[i].idMeal;
     const picSrc = data[i].strMealThumb;
     const foodName = data[i].strMeal;
-    this.genPopupCom(data, cardId, cardUnqId, picSrc, foodName);
+    const fCat = data[i].strCategory;
+    const fOrig = data[i].strArea;
+    const fTags = data[i].strTags;
+    // if(data[i].)
+    const fVideo = data[i].strYoutube;
+    const fInst = data[i].strInstructions;
+    this.genPopupCom(data, cardId, cardUnqId, picSrc, foodName, fCat, fOrig, fTags, fVideo, fInst);
   }
 
   hideIt = (item) => {

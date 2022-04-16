@@ -106,8 +106,6 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #eee;
-  border-radius: 0.5rem;
   margin-bottom: 0.5rem;
   -webkit-box-align: start;
       -ms-flex-align: start;
@@ -156,8 +154,6 @@ h2 {
   width: 100%;
   height: auto;
   padding: 0.1rem;
-  border-radius: 0.5rem;
-  border-radius: 5px;
 }
 
 .popup-container {
@@ -176,8 +172,7 @@ h2 {
           align-items: center;
   width: 95%;
   max-width: 100vh;
-  background-color: #eee;
-  border-radius: 0.5rem;
+  border: solid 0.2rem black;
   margin-bottom: 0.5rem;
   padding: 0.6rem;
 }
@@ -188,11 +183,11 @@ h2 {
 }
 
 .popup-x {
-  font-size: 1.6rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bolder;
   margin-right: 0.2rem;
-  padding: 0.2rem;
+  padding: 0 0.2rem;
   cursor: pointer;
 }
 
@@ -226,11 +221,9 @@ h2 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 0.2rem 0;
+  margin: 0.2rem 0;
   gap: 0.3rem;
-}
-
-.card-info .card-title {
-  min-height: 3.8rem;
 }
 
 .card-info .card-socials {
@@ -259,19 +252,26 @@ h2 {
 }
 
 .popup-header {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 2rem auto 2rem;
-      grid-template-columns: 2rem auto 2rem;
-  gap: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.2rem;
 }
 
 .popup-card-pic {
-  width: 60vw;
+  width: 63vw;
   max-width: 80vh;
   -ms-grid-column-align: center;
       justify-self: center;
   margin-bottom: 0;
+  padding-top: 0.2rem;
 }
 
 .popup-card-pic img {
@@ -280,7 +280,6 @@ h2 {
      object-fit: cover;
   width: 100%;
   max-height: 30vh;
-  border-radius: 0.5rem;
 }
 
 .popup-meta {
@@ -294,16 +293,24 @@ h2 {
   -ms-flex-item-align: center;
       align-self: center;
   width: 100%;
-  margin-bottom: 0.8rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
 .popup-meta .popup-info {
+  padding: 0.5rem;
+  margin-bottom: 0.8rem;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -312,16 +319,18 @@ h2 {
   -ms-flex-item-align: center;
       align-self: center;
   justify-self: center;
-  gap: 0.3rem;
 }
 
 .popup-meta .popup-info .popup-title {
   font-style: normal;
 }
 
+.popup-meta .popup-info .popup-meal-details {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
 .comment-board {
-  background-color: #e2e2e2;
-  border-radius: 5px;
   padding: 0.5rem;
   margin-bottom: 0.8rem;
   -webkit-box-flex: 2;
@@ -364,7 +373,6 @@ h2 {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  border-radius: 5px;
 }
 
 #grid .count {
@@ -398,8 +406,6 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #e2e2e2;
-  border-radius: 5px;
   padding: 0.5rem;
   width: 60vw;
   max-width: 80vh;
