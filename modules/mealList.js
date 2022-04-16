@@ -1,4 +1,4 @@
-// mealList.js
+/* eslint-disable no-await-in-loop */
 
 import { updatelike, sendLike } from '../src/likesApi.js';
 
@@ -31,11 +31,15 @@ const mealList = async (data) => {
     const likesText = document.createElement('div');
     likesText.classList.add('count');
 
+
     const like = document.createElement('div');
     const icon = document.createElement('i');
     icon.classList.add('fa', 'fa-heart-o');
     like.classList.add('like');
     like.appendChild(icon);
+
+    const like = document.createElement('button');
+    like.classList.add('like');
     likesText.appendChild(like);
 
     const likesCount = document.createElement('p');

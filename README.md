@@ -1,7 +1,15 @@
+
 # KT Meals
 ## 📑 Project description
 KT Meals is a food appreciation website.
 Choose a meal of your preference, hit like, and comment.
+
+# Kanban Board
+
+## 📑 Project description
+
+This web displays characters from TheMealDB and allows to post likes and comments thanks to the Involvement API, which also allow the page to show a counter of these posts. The project was built using SCSS, JS, HTML and Webpack and tested through Jest.
+develop
 
 ## 🛠 Built with
 - HTML5
@@ -20,6 +28,6 @@ Live version: [NOT YET]
 
 **Have Samuel**
 - GitHub: [@Have-Samuel](https://github.com/Have-Samuel "Have Samuel's GitHub profile")
-- Twitter: [@samhave](https://twitter.com/samhave "Have Samuel's Twitter profile")
+- Twitter: [@samhave](https://twitter.com/samhave1 "Have Samuel's Twitter profile")
 ## 📝License
 This project is [MIT](https://github.com/mrjuda/capstone1/blob/main/LICENSE) licensed.
