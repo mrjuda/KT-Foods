@@ -1,5 +1,5 @@
 
-# KT Meals Inc
+# KT Foods Inc
 ## 📑 Project description
 KT Meals is a food appreciation website.
 Choose a meal of your preference, hit like, and comment.
@@ -13,7 +13,7 @@ This web displays characters from TheMealDB and allows to post likes and comment
 - Webpack
 
 ## 📺 Live Demo
-Live version: [mrjuda.github.io/capstone1](https://mrjuda.github.io/capstone1/dist/)
+Live version: [mrjuda.github.io/KT-Foods](https://mrjuda.github.io/KT-Foods/dist/)
 ## 🎥 Video presentation
 Video Presentation: [https://www.loom.com/share/a18db8a391e34cebb3b37c6a834d7eaa](https://www.loom.com/share/a18db8a391e34cebb3b37c6a834d7eaa)
 
